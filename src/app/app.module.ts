@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { VideoComponent } from './video/video.component';
-import { PresentacionComponent } from './presentacion/presentacion.component';
-import { RepositorioComponent } from './repositorio/repositorio.component';
-import { IndiceContenidoComponent } from './indice-contenido/indice-contenido.component';
-
+import { VideoComponent } from './Components/video/video.component';
+import { PresentacionComponent } from './Components/presentacion/presentacion.component';
+import { RepositorioComponent } from './Components/repositorio/repositorio.component';
+import { IndiceContenidoComponent } from './Components/indice-contenido/indice-contenido.component';
+import { StyleLocatorService } from './services/style-locator.service';
+import { ActivityDataService } from './services/activity-data.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,13 @@ import { IndiceContenidoComponent } from './indice-contenido/indice-contenido.co
     IndiceContenidoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    StyleLocatorService,
+    ActivityDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+{
+  "video":{
+    "width":"500px",
+    "height":"400px",
+    "controlBarColor":"red",
+    "controlBarElementColor":"#e0e0e0",
+    "progressBarColor":"#fff",
+    "border": "2px solid red",
+    "padding": "0px",
+    "transcriptionHeaderTitleColor":"#000",
+    "transcriptionContentFontSize":"14px"
+  },
+  "presentacion":{
+    "width":"400px",
+    "frameColor":"rgba(15, 39, 158, 0.82)",
+    "colorLetra":"#000"
+  }
+
+}
