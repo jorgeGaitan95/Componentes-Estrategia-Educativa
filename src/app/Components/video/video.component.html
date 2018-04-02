@@ -4,10 +4,11 @@
     controls
     width="600"
     height="300"
-    preload="auto">
-    <source *ngFor="let prueba of sources" [attr.data-res]="prueba.dataRes" src="{{prueba.src}}" type="{{prueba.type}}" [attr.label]='prueba.label'/>
-    <track src="../assets/subs_en.vtt" srclang="en" label="English" kind="subtitles" type="text/vtt">
-    <track src="../assets/subs_es.vtt" srclang="es" label="Spanish" kind="subtitles" type="text/vtt">
+    preload="auto"
+    data-setup='{"playbackRates": [1, 1.5, 2]}'>
+    <!--<source *ngFor="let source of sources" [attr.data-res]="source.dataRes" src="{{source.src}}" type="{{source.type}}" [attr.label]='source.label'/>-->
+    
+    <track  *ngFor="let subtitulo of subtitulos" src="{{subtitulo.src}}" srclang="{{subtitulo.srcLang}}" label="{{subtitulo.label}}" kind="subtitles" [attr.type]="subtitulo.type">
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a
       web browser that

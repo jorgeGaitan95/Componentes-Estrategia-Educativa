@@ -1,3 +1,40 @@
-<p>
-  presentacion works!
-</p>
+<div id="pdf-view">
+  <div id="titlebar">
+    <div id="documentName">{{nombreDocumento}}</div>
+  </div>
+  <div id="canvasContainer">
+    <!--<canvas id="the-canvas"></canvas>-->
+    <pdf-viewer [src]="pdfSrc" 
+                [page]="pagina"
+                [zoom]="zoom"
+                [original-size]="false"
+                [show-all]="false"
+                [fit-to-page]="true"
+                [stick-to-page]  = "true"
+                (after-load-complete)="afterLoadComplete($event)"
+                (page-rendered)="pageRendererEvent($event)"
+                style="display: block;width: 300px; height: 400px; overflow: auto;"
+    ></pdf-viewer>
+  </div>
+  <div id="toolbarContainer">
+    <div id="toolbar">
+      <div id="toolbarLeft">
+        <div id="navButtons" class="splitToolbarButton">
+          <button id="prev" class="toolbarButton pageUp" title="Previous Page" (click)="navegarPaginaAnterior()"></button>
+          <div class="splitToolbarButtonSeparator"></div>
+          <button id="next" class="toolbarButton pageDown" title="Next Page" (click)="navegarSiguientePagina()"></button>
+        </div>
+        <label id="pageNumberLabel" class="toolbarLabel" for="pageNumber">Pagina:</label>
+        <input type="text" id="page_num" [(ngModel)]="pagina" class="toolbarField pageNumber">
+        <span class="toolbarLabel"> 
+          de 
+          <span *ngIf="pdf" id="page_count" class="toolbarLabel">{{pdf.numPages}}</span>
+        </span>
+      </div>
+      <div class="zoomButtons">
+        <span class="toolbarLabel" (click)="aplicarZoom(0.1)">in</span>
+        <span class="toolbarLabel" (click)="aplicarZoom(-0.1)">out</span>
+      </div>
+    </div>
+  </div>
+</div>

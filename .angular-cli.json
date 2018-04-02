@@ -22,8 +22,11 @@
         "styles.css"
       ],
       "scripts": [
-	"../node_modules/jquery/dist/jquery.min.js",
-	"../libs/videojs.min.js"],
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../libs/videojs.min.js",
+        "../libs/videojs-resolution-switcher.js",
+        "../libs/videojs-transcript.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

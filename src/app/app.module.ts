@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppComponent } from './app.component';
 import { VideoComponent } from './Components/video/video.component';
@@ -20,6 +22,8 @@ import { ActivityDataService } from './services/activity-data.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    PdfViewerModule,
     HttpModule
   ],
   providers: [
