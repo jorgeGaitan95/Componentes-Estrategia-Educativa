@@ -1,0 +1,19 @@
+.repositoryrow{
+    margin-bottom: 10px;
+  }
+  
+  #repositorio{
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    margin-top: 30px;
+    overflow: overlay;
+  }
+  
+  .img-item-repository{
+    margin-right: 5px;
+  }
+  
+  .name-item-repository{
+    vertical-align: top;
+    text-decoration: none;
+  }

@@ -1,3 +1,6 @@
-<p>
-  repositorio works!
-</p>
+<div id="repositorio">
+    <div *ngFor="let recurso of recursos" class='repositoryrow'>
+        <img class='img-item-repository' src="{{recurso.imgSrc}}">
+        <a target='_blank' class='name-item-repository' href="{{recurso.url}}">{{recurso.name}}</a>
+    </div>
+</div>

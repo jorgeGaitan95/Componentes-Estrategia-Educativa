@@ -13,7 +13,8 @@
                 [stick-to-page]  = "true"
                 (after-load-complete)="afterLoadComplete($event)"
                 (page-rendered)="pageRendererEvent($event)"
-                style="display: block;width: 300px; height: 400px; overflow: auto;"
+                class="pdfViewer"
+                style="display: block;width: 300px; height: 400px; overflow: overlay;"
     ></pdf-viewer>
   </div>
   <div id="toolbarContainer">
@@ -28,10 +29,12 @@
         <input type="text" id="page_num" [(ngModel)]="pagina" class="toolbarField pageNumber">
         <span class="toolbarLabel"> 
           de 
-          <span *ngIf="pdf" id="page_count" class="toolbarLabel">{{pdf.numPages}}</span>
+          <span id="page_count" class="toolbarLabel">
+              <span *ngIf="pdf">{{pdf.numPages}}</span>
+          </span>
         </span>
       </div>
-      <div class="zoomButtons">
+      <div id="zoomButtons">
         <span class="toolbarLabel" (click)="aplicarZoom(0.1)">in</span>
         <span class="toolbarLabel" (click)="aplicarZoom(-0.1)">out</span>
       </div>

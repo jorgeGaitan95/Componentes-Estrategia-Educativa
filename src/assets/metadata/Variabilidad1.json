@@ -13,10 +13,17 @@
   "presentacion":{
     "width": "400px",
     "height": "500px",
-    "border": "2px inset initial",
+    "border": "1px solid rgba(15, 39, 158, 0.82)",
     "frameColor": "rgba(15, 39, 158, 0.82)",
-    "colorLetra": "#000",
+    "colorLetra": "#fff",
     "padding":"20px"
+  },
+  "repositorio":{
+    "width": "400px",
+    "height": "200px",
+    "padding": "10px",
+    "border": "1px solid rgba(15, 39, 158, 0.82)",
+    "colorLetra": "rgba(15, 39, 158, 0.82)"
   }
 
 }

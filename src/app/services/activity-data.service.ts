@@ -5,6 +5,7 @@ import { VideoOptions } from '../Model/VideoOptions';
 import { VideoSubtitulosSource } from '../Model/VideoSubtitulosSource';
 import { PresentacionSource } from '../Model/PresentacionSource';
 import { PresentacionOptions } from '../Model/PresentacionOptions';
+import { RepositorioSource } from '../Model/RepositorioSource';
 
 @Injectable()
 export class ActivityDataService {
@@ -94,8 +95,43 @@ export class ActivityDataService {
    */
   obtenerOpcionesPresentacion(idComponente: string): PresentacionOptions {
      var opcionesPresentacion =  new PresentacionOptions;
-     opcionesPresentacion.navegarPaginas =  true;
-     opcionesPresentacion.zoom =  true;
+     opcionesPresentacion.navegarPaginas = true;
+     opcionesPresentacion.zoom = true;
      return opcionesPresentacion;
+  }
+
+  /**
+  * Método encargado de obtner la lista con la informacion de los recursos de video que se
+  * le asignaron al componente para cada una de las resoluciones.
+  * @param idComponente Identificador del componente
+  */
+  obtenerSoucesRepositorio(idComponente: string): RepositorioSource[] {
+    var recursos = [
+      {
+        "name":"identidades",
+        "url": "../../assets/360.mp4",
+        "fileType":"application/video",
+        "imgSrc": "../../assets/mpeg-24.png"
+      },
+      {
+        "name":"machine_learning",
+        "url": "../../assets/machine_learning/machine_learning.mp4",
+        "fileType":"application/video",
+        "imgSrc": "../../assets/mpeg-24.png"
+      },
+      {
+        "name":"identidades",
+        "url": "../../assets/identidades.pdf",
+        "fileType":"application/pdf",
+        "imgSrc": "../../assets/pdf-24.png"
+      },
+      {
+        "name":"presentaciones multimedia",
+        "url": "../../assets/presentaciones_multimedia.pdf",
+        "fileType":"application/pdf",
+        "imgSrc": "../../assets/pdf-24.png"
+      }
+    ];
+    return recursos;
   }
 }

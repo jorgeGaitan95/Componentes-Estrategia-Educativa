@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PDFDocumentProxy } from 'ng2-pdf-viewer/ng2-pdf-viewer';
-import * as $ from 'jquery'
+import * as $ from 'jquery';
 import { StyleLocatorService } from '../../services/style-locator.service';
 import { ActivityDataService } from '../../services/activity-data.service';
 import { PresentacionSource } from '../../Model/PresentacionSource';
@@ -40,7 +40,15 @@ export class PresentacionComponent implements OnInit {
         .subscribe(
           result => {
             presentacionStyleProps =  result;
-            console.log(presentacionStyleProps);
+            $("#titlebar").css("background-image","url(/assets/texture.png), -webkit-linear-gradient("+presentacionStyleProps.frameColor +","+ presentacionStyleProps.frameColor+")");
+            $("#toolbarContainer").css("background-image","url(/assets/texture.png), -webkit-linear-gradient("+presentacionStyleProps.frameColor +","+ presentacionStyleProps.frameColor+")");
+            $(".pdfViewer").css("height",parseInt(presentacionStyleProps.height) - 91);
+            $(".pdfViewer").css("width",parseInt(presentacionStyleProps.width)-26);
+            $('#documentName').css("color",presentacionStyleProps.colorLetra);
+            $('.toolbarLabel').css("color",presentacionStyleProps.colorLetra);
+            $('#page_num').css("color",presentacionStyleProps.colorLetra);
+            $('#pdf-view').css("border",presentacionStyleProps.border);
+            $("#presentacion").css("height",parseInt(presentacionStyleProps.height)+30);
           },
           error=>{
             console.log(error);
@@ -62,7 +70,12 @@ export class PresentacionComponent implements OnInit {
    */
   cargarOpcionesPresentacion(): void {
     var opciones = this.activityDataService.obtenerOpcionesPresentacion("1");
-    console.log(opciones);
+    if(!opciones.navegarPaginas){
+      $('#toolbarLeft').hide();
+    }
+    if(!opciones.zoom){
+      $('#zoomButtons').hide();
+    }
   }
 
   /**

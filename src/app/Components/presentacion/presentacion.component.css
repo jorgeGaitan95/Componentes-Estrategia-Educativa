@@ -1,11 +1,6 @@
 #pdf-view{
     float:left;
-    margin-left:20px;
     margin-top:30px;
-    border-width: 2px;
-    border-style: inset;
-    border-color: initial;
-    border-image: initial;
   }
   #titlebar{
     height: 32px;
@@ -153,13 +148,13 @@
       transition-timing-function: ease;
   }
   #canvasContainer{
-    padding: 5px 11px;
+    padding: 11px;
     text-align: center;
     background-color: #888;
     background-image: url(/assets/texture.png);
   }
 
-  .zoomButtons{
+  #zoomButtons{
     float: right;
   }
 

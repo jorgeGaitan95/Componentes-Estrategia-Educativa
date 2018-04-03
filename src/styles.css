@@ -48,3 +48,7 @@ body{
 .ng2-pdf-viewer-container{
   overflow-x: unset !important;
 }
+
+#presentacion{
+  display: block;
+}
