@@ -1,3 +1,8 @@
-<p>
-  indice-contenido works!
-</p>
+<div class="indice-container">
+  <div [ngStyle]="{'width.px': listaTemas.length * itemWidth }" style="overflow: hidden">
+      <div *ngFor="let tema of listaTemas" class="tema-container" (click)="navegarTema(tema)" >
+          <span class="indice-titulo indice-texto"> {{tema.titulo}}: </span>
+          <span class="indice-texto"> {{tema.nombre}} </span>
+        </div>
+  </div>
+</div>

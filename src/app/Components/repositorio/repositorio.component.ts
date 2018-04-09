@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { StyleLocatorService } from '../../services/style-locator.service';
 import { ActivityDataService } from '../../services/activity-data.service';
-import { RepositorioSource } from '../../Model/RepositorioSource';
-import { RepositorioStyleProps } from '../../Model/RepositorioStyleProps';
+import { RepositorioSource } from '../../Model/Repositorio/RepositorioSource';
+import { RepositorioStyleProps } from '../../Model/Repositorio/RepositorioStyleProps';
 
 @Component({
   selector: 'app-repositorio',

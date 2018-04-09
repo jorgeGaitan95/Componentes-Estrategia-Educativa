@@ -3,9 +3,10 @@ import { Http, Response } from '@angular/http'
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { VideoStyleProps } from '../Model/VideoStyleProps';
-import { PresentacionStyleProps } from '../Model/presentacionStyleProps';
-import { RepositorioStyleProps } from '../Model/RepositorioStyleProps';
+import { VideoStyleProps } from '../Model/Video/VideoStyleProps';
+import { PresentacionStyleProps } from '../Model/Presentacion/presentacionStyleProps';
+import { RepositorioStyleProps } from '../Model/Repositorio/RepositorioStyleProps';
+import { IndiceStyleProps } from '../Model/Indice/IndiceStyleProps';
 
 @Injectable()
 export class StyleLocatorService {
@@ -13,8 +14,8 @@ export class StyleLocatorService {
   constructor(private http: Http) { }
 
   /**
-   * Método encargado de localizar y obtener los estilos del componente video
-   * definidos para una determinada variabilidad
+   * Método encargado de localizar y obtener los estilos definidos del componente
+   * video en una determinada variabilidad
    * @param variabilidad nombre de la variabilidad
    */  
   obtenerPropiedadesEstiloVideo(variabilidad:string): Observable<VideoStyleProps> {
@@ -24,7 +25,7 @@ export class StyleLocatorService {
 
   /**
    * Método encargado de localizar y obtener los estilos definidos del componente
-   * presentacion para una determinada variabilidad
+   * presentacion en una determinada variabilidad
    * @param variabilidad nombre de la variabilidad
    */
   obtenerPropiedadesEstiloPDF(variabilidad: string): Observable<PresentacionStyleProps> {
@@ -34,12 +35,23 @@ export class StyleLocatorService {
 
   /**
    * Método encargado de localizar y obtener los estilos definidos para el componente
-   * de repositorio para una determinada variabilidad
+   * de repositorio en una determinada variabilidad
    * @param variabilidad nombre de la variabilidad
    */
   obtenerPropiedadesRepositorio(variabilidad: string): Observable<RepositorioStyleProps> {
     return this.http.get('../../assets/metadata/'+variabilidad+'.json')
     .map(response => response.json().repositorio);
   }
+
+  /**
+   * Método encargado de localizar y obtener los estilos definidos para el componente
+   * de indice en una determinada variabilidad
+   * @param variabilidad nombre de la variabilidad
+   */
+  obtenerPropiedadesIndiceContenido(variabilidad: string): Observable<IndiceStyleProps> {
+    return this.http.get('../../assets/metadata/'+variabilidad+'.json')
+    .map(response => response.json().indiceContenido);
+  }
+
 
 }

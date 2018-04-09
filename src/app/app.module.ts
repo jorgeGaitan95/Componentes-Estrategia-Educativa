@@ -11,6 +11,7 @@ import { RepositorioComponent } from './Components/repositorio/repositorio.compo
 import { IndiceContenidoComponent } from './Components/indice-contenido/indice-contenido.component';
 import { StyleLocatorService } from './services/style-locator.service';
 import { ActivityDataService } from './services/activity-data.service';
+import { SincronizacionService } from './services/sincronizacion.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ActivityDataService } from './services/activity-data.service';
   ],
   providers: [
     StyleLocatorService,
-    ActivityDataService
+    ActivityDataService,
+    SincronizacionService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import { VideoSource } from '../Model/VideoSource';
-import { VideoOptions } from '../Model/VideoOptions';
-import { VideoSubtitulosSource } from '../Model/VideoSubtitulosSource';
-import { PresentacionSource } from '../Model/PresentacionSource';
-import { PresentacionOptions } from '../Model/PresentacionOptions';
-import { RepositorioSource } from '../Model/RepositorioSource';
+import { VideoSource } from '../Model/Video/VideoSource';
+import { VideoOptions } from '../Model/Video/VideoOptions';
+import { VideoSubtitulosSource } from '../Model/Video/VideoSubtitulosSource';
+import { PresentacionSource } from '../Model/Presentacion/PresentacionSource';
+import { PresentacionOptions } from '../Model/Presentacion/PresentacionOptions';
+import { RepositorioSource } from '../Model/Repositorio/RepositorioSource';
+import { TemaContenido } from '../Model/Indice/TemaContenido'
 
 @Injectable()
 export class ActivityDataService {
@@ -95,8 +96,8 @@ export class ActivityDataService {
    */
   obtenerOpcionesPresentacion(idComponente: string): PresentacionOptions {
      var opcionesPresentacion =  new PresentacionOptions;
-     opcionesPresentacion.navegarPaginas = true;
-     opcionesPresentacion.zoom = true;
+     opcionesPresentacion.navegarPaginas = false;
+     opcionesPresentacion.zoom = false;
      return opcionesPresentacion;
   }
 
@@ -133,5 +134,51 @@ export class ActivityDataService {
       }
     ];
     return recursos;
+  }
+
+  /**
+   * Método encargado de obtner los temas del indice definidos para un determinado componente
+   * @param idComponente Identificador del componente
+   */
+  obtenerTemasIndice(idComponente: string): TemaContenido[] {
+    var listaTemas = [
+      {
+        titulo: "Tema 1",
+        nombre: "Introduccion",
+        segundoVideo: 30,
+        paginaPresentacion: 1
+      },
+      {
+        titulo: "Tema 2",
+        nombre: "Historia",
+        segundoVideo: 60,
+        paginaPresentacion: 2
+      },
+      {
+        titulo: "Tema 3",
+        nombre: "Presente",
+        segundoVideo: 70,
+        paginaPresentacion: 3
+      },
+      {
+        titulo: "Tema 4",
+        nombre: "Futuro",
+        segundoVideo: 90,
+        paginaPresentacion: 4
+      },
+      {
+        titulo: "Tema 5",
+        nombre: "Acciones siguientes",
+        segundoVideo: 100,
+        paginaPresentacion: 5
+      },
+      {
+        titulo: "Tema 6",
+        nombre: "Concluciones",
+        segundoVideo: 120,
+        paginaPresentacion: 6
+      }
+    ];
+    return listaTemas;
   }
 }

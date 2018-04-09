@@ -4,9 +4,11 @@ declare var videojs: any;
 
 import { StyleLocatorService } from '../../services/style-locator.service';
 import { ActivityDataService } from '../../services/activity-data.service';
-import { VideoStyleProps } from '../../Model/VideoStyleProps';
-import { VideoSource } from '../../Model/VideoSource';
-import { VideoSubtitulosSource } from '../../Model/VideoSubtitulosSource';
+import { SincronizacionService } from '../../services/sincronizacion.service';
+import { VideoStyleProps } from '../../Model/Video/VideoStyleProps';
+import { VideoSource } from '../../Model/Video/VideoSource';
+import { VideoSubtitulosSource } from '../../Model/Video/VideoSubtitulosSource';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-video',
@@ -19,8 +21,17 @@ export class VideoComponent implements OnInit {
   video: any;
   sources: VideoSource[];
   subtitulos: VideoSubtitulosSource[];
+  subscription: Subscription;
 
-  constructor(private styleLocatorService: StyleLocatorService, private activityDataService: ActivityDataService) { }
+  constructor(private styleLocatorService: StyleLocatorService, private activityDataService: ActivityDataService,
+    private sincronizacionService: SincronizacionService) 
+  {
+    this.subscription =  sincronizacionService.videoSecondChangeAnnounced$.subscribe(
+      videoSecond => {
+        this.NavegarAlSegundoDelVideo(videoSecond);
+      }
+    )
+  }
 
   /**
    * Metodo brindado por angular, que se ejecuta depues de cargar el componente
@@ -38,6 +49,13 @@ export class VideoComponent implements OnInit {
     this.loadVideoSources();
     this.loadSubtitulosVideo();
     this.cargarOpcionesVideo();
+  }
+  
+  /**
+   * Metodo brindado por angular, que se ejecuta al destruir el componente
+   */
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   /**
@@ -122,7 +140,7 @@ export class VideoComponent implements OnInit {
    * Método encargado de navegar a un determinado segundo del video
    * @param segundo Segundo del video al que se desea navegar
    */
-  NavegarAlSegundoDelVideo(segundo : Int32Array) : void{
+  NavegarAlSegundoDelVideo(segundo : number) : void{
     this.video.currentTime(segundo);
   }
 

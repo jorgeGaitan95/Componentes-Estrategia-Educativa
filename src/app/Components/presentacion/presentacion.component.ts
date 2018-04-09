@@ -3,9 +3,12 @@ import { PDFDocumentProxy } from 'ng2-pdf-viewer/ng2-pdf-viewer';
 import * as $ from 'jquery';
 import { StyleLocatorService } from '../../services/style-locator.service';
 import { ActivityDataService } from '../../services/activity-data.service';
-import { PresentacionSource } from '../../Model/PresentacionSource';
-import { PresentacionStyleProps } from '../../Model/presentacionStyleProps';
-import { PresentacionOptions } from '../../Model/PresentacionOptions';
+import { SincronizacionService } from '../../services/sincronizacion.service';
+import { PresentacionSource } from '../../Model/Presentacion/PresentacionSource';
+import { PresentacionStyleProps } from '../../Model/Presentacion/presentacionStyleProps';
+import { PresentacionOptions } from '../../Model/Presentacion/PresentacionOptions';
+import { Subscription } from 'rxjs/Subscription';
+
 @Component({
   selector: 'app-presentacion',
   templateUrl: './presentacion.component.html',
@@ -19,8 +22,15 @@ export class PresentacionComponent implements OnInit {
   pagina:number;
   pdf: any;
   zoom: number = 1.0;
+  subscription: Subscription;
   
-  constructor(private styleLocatorService: StyleLocatorService, private activityDataService: ActivityDataService) { 
+  constructor(private styleLocatorService: StyleLocatorService, private activityDataService: ActivityDataService,
+    private sincronizacionService: SincronizacionService) 
+  { 
+    this.subscription= sincronizacionService.paginaChangeAnnounced$.subscribe(
+      page => {  
+        this.pagina = page;
+      });
   }
 
   ngOnInit() {
@@ -29,6 +39,11 @@ export class PresentacionComponent implements OnInit {
     this.cargarOpcionesPresentacion();
     this.pagina = 1;
   }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
   /**
    * Método encargado de asignar las propiedades visuales al componte segun el tipo
    * de variabilidad definida
