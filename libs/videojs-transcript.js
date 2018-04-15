@@ -1,5 +1,6 @@
 /*! videojs-transcript - v0.8.0 - 2016-02-21
 * Copyright (c) 2016 Matthew Walsh; Licensed MIT */
+
 (function (window, videojs) {
   'use strict';
 
@@ -341,6 +342,20 @@ var widget = function (plugin) {
     header.textContent = utils.localize('Transcript');
     return header;
   };
+  var createSearchBox = function() {
+    var searchBox = utils.createEl('div','-searchBox');
+    var inputBusqueda = document.createElement('input');
+    inputBusqueda.setAttribute('id','query');
+    inputBusqueda.setAttribute('placeholder','Buscar...');
+    inputBusqueda.setAttribute('type','text');
+    var button = document.createElement('button');
+    button.appendChild(document.createTextNode("Buscar"));
+    button.setAttribute('class','queryButton');
+    searchBox.appendChild(inputBusqueda);
+    searchBox.appendChild(button);
+
+    return searchBox;
+  };
   var createSelector = function (){
     var selector = utils.createEl('select', '-selector');
       plugin.validTracks.forEach(function (track, i) {
@@ -418,6 +433,10 @@ var widget = function (plugin) {
       var title = createTitle();
       el.appendChild(title);
     }
+
+    var searchBox = createSearchBox();
+    el.appendChild(searchBox);
+
     if (plugin.settings.showTrackSelector) {
       var selector = createSelector();
       el.appendChild(selector);

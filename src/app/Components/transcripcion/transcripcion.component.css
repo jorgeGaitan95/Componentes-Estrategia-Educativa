@@ -1,0 +1,37 @@
+
+
+/*Campo de Busqueda trasncripcion*/
+#query{
+    margin-left: 3px;
+    background: #e4e4e4;
+    padding:6px 10px;
+    border-radius:5px 0 0 5px;
+    -moz-border-radius:5px 0 0 5px;
+    -webkit-border-radius:5px 0 0 5px;
+    -o-border-radius:5px 0 0 5px;
+    border:0 none;
+    font-size: 14px;
+    width:156px;
+  }
+  .queryButton{
+    background:rgba(15, 39, 158, 0.819608);
+    color:white;
+    font: 'trebuchet ms', trebuchet;
+    padding: 5px 20px;
+    border-radius:0 5px 5px 0;
+    -moz-border-radius:0 5px 5px 0;
+    -webkit-border-radius:0 5px 5px 0;
+    -o-border-radius:0 5px 5px 0;
+    border:0 none;
+    font-size: 14px;
+  }
+  .searchBox{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .highlight{
+    background: #ffff00;
+    font-weight: bold;
+  }

@@ -12,6 +12,7 @@ import { IndiceContenidoComponent } from './Components/indice-contenido/indice-c
 import { StyleLocatorService } from './services/style-locator.service';
 import { ActivityDataService } from './services/activity-data.service';
 import { SincronizacionService } from './services/sincronizacion.service';
+import { TranscripcionComponent } from './Components/transcripcion/transcripcion.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SincronizacionService } from './services/sincronizacion.service';
     VideoComponent,
     PresentacionComponent,
     RepositorioComponent,
-    IndiceContenidoComponent
+    IndiceContenidoComponent,
+    TranscripcionComponent
   ],
   imports: [
     BrowserModule,

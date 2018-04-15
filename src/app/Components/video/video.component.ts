@@ -8,6 +8,7 @@ import { SincronizacionService } from '../../services/sincronizacion.service';
 import { VideoStyleProps } from '../../Model/Video/VideoStyleProps';
 import { VideoSource } from '../../Model/Video/VideoSource';
 import { VideoSubtitulosSource } from '../../Model/Video/VideoSubtitulosSource';
+import { ItemSincronizacion } from '../../Model/ItemSincronizacion';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -22,6 +23,9 @@ export class VideoComponent implements OnInit {
   sources: VideoSource[];
   subtitulos: VideoSubtitulosSource[];
   subscription: Subscription;
+  InfoSincronizacion: ItemSincronizacion[];
+  currentTemaSincronizacion: ItemSincronizacion;
+  currentSecond: number;
 
   constructor(private styleLocatorService: StyleLocatorService, private activityDataService: ActivityDataService,
     private sincronizacionService: SincronizacionService) 
@@ -45,10 +49,12 @@ export class VideoComponent implements OnInit {
         }
       }
     });
+    this.currentSecond = 0;
     this.asignarPropiedadesDeEstiloAlComponente();
     this.loadVideoSources();
     this.loadSubtitulosVideo();
     this.cargarOpcionesVideo();
+    this.consultarItemsSincronizacion();
   }
   
   /**
@@ -144,6 +150,33 @@ export class VideoComponent implements OnInit {
     this.video.currentTime(segundo);
   }
 
+  consultarItemsSincronizacion(): void {
+    this.InfoSincronizacion = this.activityDataService.obtenerItemsSincronizacion("1");
+    if(this.InfoSincronizacion && this.InfoSincronizacion.length>0)
+      this.video.on('timeupdate',this.prueba.bind(this));
+  }
 
+  prueba() : void{
+    var segundoVideo = Math.floor(this.video.currentTime())
+    if(this.currentSecond!=segundoVideo && segundoVideo>0){
+      let peso:number = 100000000;
+      let temaSincronizacion: ItemSincronizacion;
+      this.currentSecond = segundoVideo;
+      for(let item of this.InfoSincronizacion){
+        if(item.tiempo<= this.currentSecond && Math.abs(this.currentSecond-item.tiempo) < peso)
+        {
+          temaSincronizacion = item;
+        }
+      }
+      if(temaSincronizacion){
+        if((this.currentTemaSincronizacion && this.currentTemaSincronizacion.pagina != temaSincronizacion.pagina)
+          || !this.currentTemaSincronizacion) 
+        {
+          this.currentTemaSincronizacion = temaSincronizacion;
+          this.sincronizacionService.announcePageChange(this.currentTemaSincronizacion.pagina);
+        }
+      }
+    }
+  }
 
 }

@@ -7,7 +7,7 @@ import { PresentacionSource } from '../Model/Presentacion/PresentacionSource';
 import { PresentacionOptions } from '../Model/Presentacion/PresentacionOptions';
 import { RepositorioSource } from '../Model/Repositorio/RepositorioSource';
 import { TemaContenido } from '../Model/Indice/TemaContenido'
-
+import { ItemSincronizacion } from '../Model/ItemSincronizacion';
 @Injectable()
 export class ActivityDataService {
 
@@ -96,8 +96,8 @@ export class ActivityDataService {
    */
   obtenerOpcionesPresentacion(idComponente: string): PresentacionOptions {
      var opcionesPresentacion =  new PresentacionOptions;
-     opcionesPresentacion.navegarPaginas = false;
-     opcionesPresentacion.zoom = false;
+     opcionesPresentacion.navegarPaginas = true;
+     opcionesPresentacion.zoom = true;
      return opcionesPresentacion;
   }
 
@@ -180,5 +180,56 @@ export class ActivityDataService {
       }
     ];
     return listaTemas;
+  }
+
+  obtenerItemsSincronizacion(idComponente: string): ItemSincronizacion[]{
+    var itemsSincronizacion = [
+      {
+        tiempo: 5,
+        pagina: 1,
+        tema: "Introduccion"
+      },
+      {
+        tiempo: 15,
+        pagina: 2,
+        tema: "Historia"
+      },
+      {
+        tiempo: 25,
+        pagina: 3,
+        tema: "Presente"
+      },
+      {
+        tiempo: 45,
+        pagina: 4,
+        tema: "Futuro"
+      },
+      {
+        tiempo: 80,
+        pagina: 5,
+        tema: "Acciones siguientes"
+      },
+      {
+        tiempo: 100,
+        pagina: 6,
+        tema: "Concluciones"
+      },
+      {
+        tiempo: 180,
+        pagina: 7,
+        tema: "Concluciones"
+      },
+      {
+        tiempo: 360,
+        pagina: 8,
+        tema: "Concluciones"
+      },
+      {
+        tiempo: 500,
+        pagina: 9,
+        tema: "Concluciones"
+      }
+    ];
+    return itemsSincronizacion;
   }
 }

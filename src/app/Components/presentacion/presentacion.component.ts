@@ -7,6 +7,7 @@ import { SincronizacionService } from '../../services/sincronizacion.service';
 import { PresentacionSource } from '../../Model/Presentacion/PresentacionSource';
 import { PresentacionStyleProps } from '../../Model/Presentacion/presentacionStyleProps';
 import { PresentacionOptions } from '../../Model/Presentacion/PresentacionOptions';
+import { ItemSincronizacion } from '../../Model/ItemSincronizacion';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -23,6 +24,7 @@ export class PresentacionComponent implements OnInit {
   pdf: any;
   zoom: number = 1.0;
   subscription: Subscription;
+  ItemsSincronizacion: ItemSincronizacion[];
   
   constructor(private styleLocatorService: StyleLocatorService, private activityDataService: ActivityDataService,
     private sincronizacionService: SincronizacionService) 
@@ -37,6 +39,7 @@ export class PresentacionComponent implements OnInit {
     this.asignarPropiedadesDeEstiloAlComponente();
     this.loadSourcePresentacion();
     this.cargarOpcionesPresentacion();
+    this.consultarItemsSincronizacion();
     this.pagina = 1;
   }
 
@@ -92,6 +95,10 @@ export class PresentacionComponent implements OnInit {
       $('#zoomButtons').hide();
     }
   }
+  
+  consultarItemsSincronizacion() :  void{
+    this.ItemsSincronizacion = this.activityDataService.obtenerItemsSincronizacion("1");
+  }
 
   /**
    * Get pdf information after it's loaded
@@ -104,12 +111,29 @@ export class PresentacionComponent implements OnInit {
   navegarSiguientePagina(){
     if(this.pdf !== undefined && this.pagina<this.pdf.numPages){
       this.pagina++;
+      this.notificarCambioPaginaSincronizacion();
     }
   }
 
   navegarPaginaAnterior(){
     if(this.pdf !== undefined && this.pagina>1){
       this.pagina--;
+      this.notificarCambioPaginaSincronizacion();
+    }
+  }
+
+  notificarCambioPaginaSincronizacion(): void{
+    if(this.ItemsSincronizacion){
+      let temaSincronizacion: ItemSincronizacion;
+      for (let item of this.ItemsSincronizacion) {
+        if(item.pagina == this.pagina)
+          temaSincronizacion = item;
+      }
+      if(temaSincronizacion){
+        console.log(temaSincronizacion);
+        this.sincronizacionService.announceVideoSecondChanged(temaSincronizacion.tiempo);
+      }
+        
     }
   }
 
