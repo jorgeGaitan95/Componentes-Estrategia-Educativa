@@ -13,6 +13,8 @@ import { StyleLocatorService } from './services/style-locator.service';
 import { ActivityDataService } from './services/activity-data.service';
 import { SincronizacionService } from './services/sincronizacion.service';
 import { TranscripcionComponent } from './Components/transcripcion/transcripcion.component';
+import { ChatComponent } from './Components/chat/chat.component';
+import { ComentariosComponent } from './Components/comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { TranscripcionComponent } from './Components/transcripcion/transcripcion
     PresentacionComponent,
     RepositorioComponent,
     IndiceContenidoComponent,
-    TranscripcionComponent
+    TranscripcionComponent,
+    ChatComponent,
+    ComentariosComponent
   ],
   imports: [
     BrowserModule,
