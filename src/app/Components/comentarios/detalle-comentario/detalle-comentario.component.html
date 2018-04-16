@@ -1,0 +1,20 @@
+<div class="contenido-comentario">
+  <div class="container-detalle-comentario">
+    <img src="{{comentario.imgUser}}" class="user-comentario-imagen" alt="">
+    <div class="body-comentario">
+      <span class="comentario-user-name">{{comentario.userName}}</span> 
+      <span class="tiempo-comentario">{{comentario.date | fromNow}}</span>
+      <p class="texto-comentario">{{comentario.texto}}</p>
+      <div>
+          <button class="btn-reponder-comentario" (click)="mostrarComponenteRespuesta(true)">Responder</button>
+          <div class="ver-ocultar-respuestas" *ngIf="comentario.respuestas && !mostarRespuestas" (click)="mostrarRespuestas(true)">Ver Respuestas</div>
+          <div class="ver-ocultar-respuestas" *ngIf="mostarRespuestas" (click)="mostrarRespuestas(false)">Ocultar Respuestas</div>
+      </div>
+      <app-nuevo-comentario addRespuesta="Y" *ngIf="mostarComponenteRespuesta" (add)="agregarNuevaRespuesta($event)" (cancel)="cancelarCreacionRespuesta()"></app-nuevo-comentario>
+      <div *ngIf="mostarRespuestas">
+        <app-detalle-comentario *ngFor="let respuesta of comentario.respuestas" [comentario]=respuesta></app-detalle-comentario>
+      </div>
+    </div>
+  </div>
+</div>
+

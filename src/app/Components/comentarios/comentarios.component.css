@@ -1,0 +1,9 @@
+.container-comentarios{
+    border: 1px solid rgba(15, 39, 158, 0.82);
+    padding: 10px;
+    font-family: calibri;
+    width: 832px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}

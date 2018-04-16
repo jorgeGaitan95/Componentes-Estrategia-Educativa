@@ -15,6 +15,9 @@ import { SincronizacionService } from './services/sincronizacion.service';
 import { TranscripcionComponent } from './Components/transcripcion/transcripcion.component';
 import { ChatComponent } from './Components/chat/chat.component';
 import { ComentariosComponent } from './Components/comentarios/comentarios.component';
+import { FromNowPipe } from './pipes/from-now.pipe';
+import { NuevoComentarioComponent } from './Components/comentarios/nuevo-comentario/nuevo-comentario.component';
+import { DetalleComentarioComponent } from './Components/comentarios/detalle-comentario/detalle-comentario.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ComentariosComponent } from './Components/comentarios/comentarios.compo
     IndiceContenidoComponent,
     TranscripcionComponent,
     ChatComponent,
-    ComentariosComponent
+    ComentariosComponent,
+    FromNowPipe,
+    NuevoComentarioComponent,
+    DetalleComentarioComponent
   ],
   imports: [
     BrowserModule,

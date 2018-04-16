@@ -1,0 +1,8 @@
+<div class="container-nuevo-comentario">
+    <textarea rows="3" class="input-nuevo-comentario" [(ngModel)]="textoComentario" placeholder="Agrega un nuevo comentario sobre el tema"></textarea>
+    <div class="container-boton-agregar">
+        <button class="boton-cancelar-comentario" *ngIf="isNuevaRespuesta" (click)="cancelarComentario()">Cancelar</button>
+        <button class="boton-nuevo-comentario" (click)="agregarComentario()">{{textoBotonAgregar}}</button>
+    </div>
+</div>
+

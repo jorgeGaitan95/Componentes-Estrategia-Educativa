@@ -1,0 +1,48 @@
+.container-detalle-comentario{
+    display: flex;
+    flex-direction: row;
+}
+.user-comentario-imagen{
+    height: 36px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 36px;
+    margin-right: 7px;
+}
+.body-comentario{
+    flex-grow: 9;
+}
+.comentario-user-name{
+    font-weight: bold;
+    font-size: 14px;
+}
+.tiempo-comentario{
+    font-size: 14px;
+    margin-left: 5px;
+    color: rgb(117, 117, 117);
+}
+.texto-comentario{
+    text-align: justify;
+    margin: 5px 0;
+}
+.btn-reponder-comentario{
+    margin: 5px 0 10px;
+    background: #f1f0f0;
+    border: 1px solid #ccc8c8;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #464343;
+    border-radius: 4px;
+    display: inline-block;
+}
+.ver-ocultar-respuestas{
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-left: 8px;
+    /* text-decoration: underline; */
+    color: rgba(15, 39, 158, 0.82);
+}

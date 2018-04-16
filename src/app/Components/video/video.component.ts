@@ -99,7 +99,6 @@ export class VideoComponent implements OnInit {
   loadVideoSources(): void {
     //this.sources =  this.activityDataService.obtenerSoucesVideo("1");
     // Add dynamically sources via updateSrc method
-    console.log(this.activityDataService.obtenerSoucesVideo("1"));
     
     this.video.updateSrc(this.activityDataService.obtenerSoucesVideo("1"));
     this.video.on('resolutionchange', function(){
@@ -113,7 +112,6 @@ export class VideoComponent implements OnInit {
    */
   loadSubtitulosVideo(): void {
      this.subtitulos =  this.activityDataService.obtenerSubtitulosVideo("1");
-     console.log(this.subtitulos);
   }
 
   /**

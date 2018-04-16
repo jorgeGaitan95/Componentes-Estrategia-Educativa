@@ -1,3 +1,8 @@
-<p>
-  comentarios works!
-</p>
+<div class="container-comentarios">
+    <app-nuevo-comentario (add)="agregarNuevoComentario($event)"></app-nuevo-comentario>
+    <div *ngFor="let comentario of Comentarios" style="margin-bottom: 15px;">
+        <app-detalle-comentario [comentario]=comentario></app-detalle-comentario>
+    </div>
+</div>
+
+
