@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { VideoStyleProps } from '../Model/Video/VideoStyleProps';
+import { TranscripcionStyleProps } from '../Model/Video/Transcripcion/TranscripcionStyleProps';
 import { PresentacionStyleProps } from '../Model/Presentacion/presentacionStyleProps';
 import { RepositorioStyleProps } from '../Model/Repositorio/RepositorioStyleProps';
 import { IndiceStyleProps } from '../Model/Indice/IndiceStyleProps';
@@ -21,6 +22,16 @@ export class StyleLocatorService {
   obtenerPropiedadesEstiloVideo(variabilidad:string): Observable<VideoStyleProps> {
     return this.http.get('../../assets/metadata/'+variabilidad+'.json')
     .map(response => response.json().video);
+  }
+  
+  /**
+   * Método encargado de localizar y obtener los estilos definidos del componete trasncipcion
+   * en una determinada variabilidad
+   * @param variabilidad  nombre de la variabilidad
+   */
+  obtenerPropiedadesEstiloTranscripcion(variabilidad: string): Observable<TranscripcionStyleProps>{
+    return this.http.get('../../assets/metadata/'+variabilidad+'.json')
+    .map(response => response.json().video.transcipcion);
   }
 
   /**

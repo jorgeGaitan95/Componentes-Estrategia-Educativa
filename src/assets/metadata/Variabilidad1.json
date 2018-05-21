@@ -7,8 +7,24 @@
     "progressBarColor":"#fff",
     "border": "2px solid rgba(15, 39, 158, 0.82)",
     "padding": "10px",
-    "transcriptionHeaderTitleColor":"#000",
-    "transcriptionContentFontSize":"14px"
+    "transcipcion":{
+      "width":"400px",
+      "height":"300px",
+      "fuenteLetra":"sans-serif",
+      "colorLetra":"#333",
+      "border":"1px solid rgba(15, 39, 158, 0.82)",
+      "padding":"1px",
+      "fondoContenidoTranscion":"white",
+      "barraBusqueda":{
+        "colorFondo":"white",
+        "colorFondoInputBuscar":"#e4e4e4",
+        "colorLetraInputBuscar":"#333",
+        "colorFondoBotonBuscar":"rgba(15, 39, 158, 0.819608)",
+        "colorLetraBotonBuscar":"white",
+        "colorFondoSelectorIdioma":"url(http://i62.tinypic.com/15xvbd5.png), linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5)",
+        "colorLetraSelectorIdioma":"#555"
+      }
+    }
   },
   "presentacion":{
     "width": "400px",
