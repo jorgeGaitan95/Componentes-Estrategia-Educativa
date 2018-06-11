@@ -19,13 +19,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/videojs-chapter-thumbnails/dist/videojs.chapter-thumbnails.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../libs/videojs.min.js",
         "../libs/videojs-resolution-switcher.js",
-        "../libs/videojs-transcript.js"
+        "../libs/videojs-transcript.js",
+        "../node_modules/videojs-chapter-thumbnails/dist/videojs.chapter-thumbnails.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

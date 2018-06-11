@@ -1,0 +1,43 @@
+WEBVTT
+
+Chapter 1
+00:00:00.000 --> 00:00:40.000
+{
+  "title":"Introduccion",
+  "image":"../assets/imgVideo/Introduccion.png"
+}
+
+2
+00:00:40.000 --> 00:02:15.000
+{
+  "title":"Formulas",
+  "image":"../assets/imgVideo/Razones Trigonometricas.png"
+}
+
+3
+00:02:15.000 --> 00:03:25.000
+{
+  "title":"Tema 3",
+  "image":"../assets/imgVideo/Prueba.png"
+}
+
+4
+00:03:25.000 --> 00:04:52.000
+{
+  "title":"Tema 4",
+  "image":"../assets/imgVideo/Prueba.png"
+}
+
+5
+00:04:52.000 --> 00:06:19.500
+{
+  "title":"Tema 5",
+  "image":"../assets/imgVideo/Prueba.png"
+}
+
+6
+00:06:19.500 --> 00:07:09.000
+{
+  "title":"Tema 6",
+  "image":"../assets/imgVideo/Prueba.png"
+}

@@ -104,6 +104,9 @@ export class VideoComponent implements OnInit {
     this.video.on('resolutionchange', function(){
       console.log('Source changed to %s', this.video.src())
     });
+    this.video.chapter_thumbnails({
+      src: '../../../assets/chapters.en.vtt'
+    });
     
   }
 

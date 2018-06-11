@@ -18,6 +18,7 @@ import { ComentariosComponent } from './Components/comentarios/comentarios.compo
 import { FromNowPipe } from './pipes/from-now.pipe';
 import { NuevoComentarioComponent } from './Components/comentarios/nuevo-comentario/nuevo-comentario.component';
 import { DetalleComentarioComponent } from './Components/comentarios/detalle-comentario/detalle-comentario.component';
+import { TemarioComponent } from './Components/temario/temario.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DetalleComentarioComponent } from './Components/comentarios/detalle-com
     ComentariosComponent,
     FromNowPipe,
     NuevoComentarioComponent,
-    DetalleComentarioComponent
+    DetalleComentarioComponent,
+    TemarioComponent
   ],
   imports: [
     BrowserModule,
