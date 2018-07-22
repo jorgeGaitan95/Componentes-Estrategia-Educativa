@@ -9,6 +9,10 @@ import { PresentacionStyleProps } from '../../Model/Presentacion/presentacionSty
 import { PresentacionOptions } from '../../Model/Presentacion/PresentacionOptions';
 import { ItemSincronizacion } from '../../Model/ItemSincronizacion';
 import { Subscription } from 'rxjs/Subscription';
+import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';
+import { faSearchMinus } from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-presentacion',
@@ -18,6 +22,10 @@ import { Subscription } from 'rxjs/Subscription';
 export class PresentacionComponent implements OnInit {
 
   @Input() variabilidad: string;
+  faSearchPlus = faSearchPlus;
+  faSearchMinus = faSearchMinus;
+  faCaretLeft = faCaretLeft;
+  faCaretRight = faCaretRight;
   nombreDocumento: string;
   pdfSrc:string;
   pagina:number;
@@ -58,15 +66,19 @@ export class PresentacionComponent implements OnInit {
         .subscribe(
           result => {
             presentacionStyleProps =  result;
-            $("#titlebar").css("background-image","url(/assets/texture.png), -webkit-linear-gradient("+presentacionStyleProps.frameColor +","+ presentacionStyleProps.frameColor+")");
-            $("#toolbarContainer").css("background-image","url(/assets/texture.png), -webkit-linear-gradient("+presentacionStyleProps.frameColor +","+ presentacionStyleProps.frameColor+")");
+            //$("#titlebar").css("background-image","url(/assets/texture.png), -webkit-linear-gradient("+presentacionStyleProps.frameColor +","+ presentacionStyleProps.frameColor+")");
+            //$("#toolbarContainer").css("background-image","url(/assets/texture.png), -webkit-linear-gradient("+presentacionStyleProps.frameColor +","+ presentacionStyleProps.frameColor+")");
             $(".pdfViewer").css("height",parseInt(presentacionStyleProps.height) - 91);
-            $(".pdfViewer").css("width",parseInt(presentacionStyleProps.width)-26);
+            if(presentacionStyleProps.width.indexOf('%') >= 0){
+              $(".pdfViewer").css("width",presentacionStyleProps.width);
+            }else{
+              $(".pdfViewer").css("width",parseInt(presentacionStyleProps.width)-26);
+            }
             $('#documentName').css("color",presentacionStyleProps.colorLetra);
             $('.toolbarLabel').css("color",presentacionStyleProps.colorLetra);
             $('#page_num').css("color",presentacionStyleProps.colorLetra);
             $('#pdf-view').css("border",presentacionStyleProps.border);
-            $("#presentacion").css("height",parseInt(presentacionStyleProps.height)+30);
+            $("#presentacion").css("height",parseInt(presentacionStyleProps.height)-30);
           },
           error=>{
             console.log(error);

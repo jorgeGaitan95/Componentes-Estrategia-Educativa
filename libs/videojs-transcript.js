@@ -344,19 +344,27 @@ var widget = function (plugin) {
   };
   var createSearchBox = function() {
     var searchBox = utils.createEl('div','-searchBox');
+    var divContainerQuery = utils.createEl('div');
+    var spanTitle = utils.createEl('span','-titleQuery')
+    spanTitle.innerHTML= "Introduzca la palabra clave:";
     var inputBusqueda = document.createElement('input');
     inputBusqueda.setAttribute('id','query');
-    inputBusqueda.setAttribute('placeholder','Buscar...');
+    inputBusqueda.setAttribute('placeholder','Palabra clave...');
     inputBusqueda.setAttribute('type','text');
     var button = document.createElement('button');
     button.appendChild(document.createTextNode("Buscar"));
     button.setAttribute('class','queryButton');
-    searchBox.appendChild(inputBusqueda);
-    searchBox.appendChild(button);
-
+    
+    divContainerQuery.appendChild(inputBusqueda);
+    divContainerQuery.appendChild(button);
+    searchBox.appendChild(spanTitle);
+    searchBox.appendChild(divContainerQuery);
     return searchBox;
   };
   var createSelector = function (){
+    var divContainer = utils.createEl('div','-containerIdioma');
+    var spanTitle = utils.createEl('span','-titleQuery');
+    spanTitle.innerHTML= "Seleccione el Idioma:";
     var selector = utils.createEl('select', '-selector');
       plugin.validTracks.forEach(function (track, i) {
       var option = document.createElement('option');
@@ -368,7 +376,9 @@ var widget = function (plugin) {
       setTrack(document.querySelector('#' + plugin.prefix + '-' + plugin.player.id() + ' option:checked').value);
       trigger('trackchanged');
     });
-    return selector;
+    divContainer.appendChild(spanTitle);
+    divContainer.appendChild(selector);
+    return divContainer;
   };
   var clickToSeekHandler = function (event) {
     var clickedClasses = event.target.classList;

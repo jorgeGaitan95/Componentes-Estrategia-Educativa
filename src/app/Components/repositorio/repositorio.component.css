@@ -6,6 +6,9 @@
     border: 1px solid #e0e0e0;
     padding: 10px;
     overflow: overlay;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
   }
   
   .img-item-repository{
@@ -14,5 +17,4 @@
   
   .name-item-repository{
     vertical-align: top;
-    text-decoration: none;
   }

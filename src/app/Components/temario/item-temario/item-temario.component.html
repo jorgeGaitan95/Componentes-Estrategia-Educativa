@@ -1,0 +1,8 @@
+<ul class="checktree" style="font-size: 15px;padding-left: 20px;font-family: Arial, sans-serif;">
+    <li *ngFor="let item of itemsTemario" [ngClass]="{'item-single': !item.subTemas}">
+        <fa-icon [icon]="faCaretDown" style="padding: 0; color:  #000;" *ngIf="item.mostrarSubtemas && item.subTemas"  (click)="mostrarSubtemasTemario(item,false)"></fa-icon>
+        <fa-icon [icon]="faCaretRight" style="padding: 0; color:  #000;" *ngIf="!item.mostrarSubtemas" (click)="mostrarSubtemasTemario(item,true)"></fa-icon>
+        <label style="padding-left: 4px; cursor: pointer;color: #000;" [ngClass]="{'item-title': item.subTemas && item.subTemas.length > 0}" (click)="navegarTema(item)">{{item.nombre}}</label>
+        <app-item-temario *ngIf="item.mostrarSubtemas && item.subTemas" [itemsTemario]=item.subTemas></app-item-temario>
+    </li>
+</ul>

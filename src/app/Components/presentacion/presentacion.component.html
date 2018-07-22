@@ -1,7 +1,5 @@
-<div id="pdf-view">
-  <div id="titlebar">
-    <div id="documentName">{{nombreDocumento}}</div>
-  </div>
+<h5 style="margin: 0 0 10px; color: #4ccfad; font-family: 'Montserrat',sans-serif;font-size: 15px;">TITULO DE LA PRESENTACIÓN</h5>
+<div id="pdf-view" style="width: 100%; box-sizing: border-box;">
   <div id="canvasContainer">
     <!--<canvas id="the-canvas"></canvas>-->
     <pdf-viewer [src]="pdfSrc" 
@@ -19,24 +17,26 @@
   </div>
   <div id="toolbarContainer">
     <div id="toolbar">
-      <div id="toolbarLeft">
-        <div id="navButtons" class="splitToolbarButton">
-          <button id="prev" class="toolbarButton pageUp" title="Previous Page" (click)="navegarPaginaAnterior()"></button>
-          <div class="splitToolbarButtonSeparator"></div>
-          <button id="next" class="toolbarButton pageDown" title="Next Page" (click)="navegarSiguientePagina()"></button>
+      <div id="toolbarLeft" style="display: inline-block; vertical-align: top; width: 100%; margin: auto; text-align: center; padding-left: 60px; box-sizing: border-box;">
+        <fa-icon id="prev" [icon]="faCaretLeft" class="toolbarButton pageUp" (click)="navegarPaginaAnterior()"></fa-icon>
+        <div style="display: inline-block; vertical-align: top;">
+            <input type="text" id="page_num" [(ngModel)]="pagina" class="toolbarField pageNumber">
+            <span class="toolbarLabel"> 
+              de 
+              <span id="page_count" class="toolbarLabel">
+                  <span *ngIf="pdf">{{pdf.numPages}}</span>
+              </span>
+            </span>
         </div>
-        <label id="pageNumberLabel" class="toolbarLabel" for="pageNumber">Pagina:</label>
-        <input type="text" id="page_num" [(ngModel)]="pagina" class="toolbarField pageNumber">
-        <span class="toolbarLabel"> 
-          de 
-          <span id="page_count" class="toolbarLabel">
-              <span *ngIf="pdf">{{pdf.numPages}}</span>
+        <fa-icon [icon]="faCaretRight" id="next" class="toolbarButton pageDown" title="Next Page" (click)="navegarSiguientePagina()"></fa-icon>
+        <div id="zoomButtons">
+          <span class="toolbarLabel" (click)="aplicarZoom(0.1)">
+            <fa-icon [icon]="faSearchPlus" class="toolbar-icon"></fa-icon>
           </span>
-        </span>
-      </div>
-      <div id="zoomButtons">
-        <span class="toolbarLabel" (click)="aplicarZoom(0.1)">in</span>
-        <span class="toolbarLabel" (click)="aplicarZoom(-0.1)">out</span>
+          <span class="toolbarLabel" (click)="aplicarZoom(-0.1)">
+            <fa-icon [icon]="faSearchMinus" class="toolbar-icon"></fa-icon>
+          </span>
+        </div>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@ import { TemaContenido } from '../Model/Indice/TemaContenido'
 import { ItemSincronizacion } from '../Model/ItemSincronizacion';
 import { Comentario } from '../Model/Comentarios/comentario';
 import { MensajeChat } from '../Model/Chat/mensaje-chat';
+import { ItemTemario } from '../Model/Temario/ItemTemario';
 @Injectable()
 export class ActivityDataService {
 
@@ -68,7 +69,7 @@ export class ActivityDataService {
 
     var opciones  = new VideoOptions();
     opciones.tiempo = true;
-    opciones.calidad = true;
+    opciones.calidad = false;
     opciones.volumen = true;
     opciones.playPause = true;
     opciones.velocidad = true;
@@ -111,25 +112,25 @@ export class ActivityDataService {
   obtenerSoucesRepositorio(idComponente: string): RepositorioSource[] {
     var recursos = [
       {
-        "name":"identidades",
+        "name":"Identidades",
         "url": "../../assets/360.mp4",
         "fileType":"application/video",
         "imgSrc": "../../assets/mpeg-24.png"
       },
       {
-        "name":"machine_learning",
+        "name":"Machine_learning",
         "url": "../../assets/machine_learning/machine_learning.mp4",
         "fileType":"application/video",
         "imgSrc": "../../assets/mpeg-24.png"
       },
       {
-        "name":"identidades",
+        "name":"Identidades",
         "url": "../../assets/identidades.pdf",
         "fileType":"application/pdf",
         "imgSrc": "../../assets/pdf-24.png"
       },
       {
-        "name":"presentaciones multimedia",
+        "name":"Presentaciones multimedia",
         "url": "../../assets/presentaciones_multimedia.pdf",
         "fileType":"application/pdf",
         "imgSrc": "../../assets/pdf-24.png"
@@ -147,36 +148,42 @@ export class ActivityDataService {
       {
         titulo: "Tema 1",
         nombre: "Introduccion",
+        imagen: "../../assets/imgVideo/Introduccion.png",
         segundoVideo: 30,
         paginaPresentacion: 1
       },
       {
         titulo: "Tema 2",
         nombre: "Historia",
+        imagen: "../../assets/imgVideo/Prueba.png",
         segundoVideo: 60,
         paginaPresentacion: 2
       },
       {
         titulo: "Tema 3",
         nombre: "Presente",
+        imagen: "../../assets/imgVideo/Razones Trigonometricas.png",
         segundoVideo: 70,
         paginaPresentacion: 3
       },
       {
         titulo: "Tema 4",
         nombre: "Futuro",
+        imagen: "../../assets/imgVideo/Introduccion.png",
         segundoVideo: 90,
         paginaPresentacion: 4
       },
       {
         titulo: "Tema 5",
         nombre: "Acciones siguientes",
+        imagen: "../../assets/imgVideo/Prueba.png",
         segundoVideo: 100,
         paginaPresentacion: 5
       },
       {
         titulo: "Tema 6",
         nombre: "Concluciones",
+        imagen: "../../assets/imgVideo/Razones Trigonometricas.png",
         segundoVideo: 120,
         paginaPresentacion: 6
       }
@@ -280,28 +287,96 @@ export class ActivityDataService {
         userId: 1,
         userImg: "https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?resize=256%2C256&quality=100",
         userName: "Jorge Gaitán",
-        mensaje: "Hola Mundo"
+        mensaje: "Hello world"
       },
       {
         userId: 2,
         userImg: "https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?resize=256%2C256&quality=100",
         userName: "Jose Fernando",
-        mensaje: "Hola a todos"
+        mensaje: "Hello everyone"
       },
       {
         userId: 3,
         userImg: "http://www.epsomps.vic.edu.au/wp-content/uploads/2016/09/512x512-1-300x300.png",
         userName: "Juliana Rengifo",
-        mensaje: "Saludos"
+        mensaje: "Hi!!"
       },
       {
         userId: 1,
         userImg: "https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?resize=256%2C256&quality=100",
         userName: "Jorge Gaitán",
-        mensaje: "Esto es una prueba del chat"
+        mensaje: "This is a test!"
       }
     ]
     return mensajes;
+  }
+
+  obtenerItemsTemario(idComponente: string): ItemTemario[]{
+    var temario = [
+      {
+        nombre: "Formulas Fundamentales",
+        segundoVideo: 10,
+        mostrarSubtemas: true,
+        subTemas: [
+          {
+            nombre: "Formulas de los inversos o de los reciprocos",
+            segundoVideo: 20,
+            mostrarSubtemas: true,
+            subTemas: null
+          },
+          {
+            nombre: "Formulas del cociente",
+            segundoVideo: 30,
+            mostrarSubtemas: true,
+            subTemas: null
+          },
+          {
+            nombre: "Formulas de los cuadrados",
+            segundoVideo: 40,
+            mostrarSubtemas: true,
+            subTemas: null
+          }
+        ]
+      },
+      {
+        nombre: "Demostraciones",
+        segundoVideo: 50,
+        mostrarSubtemas: true,
+        subTemas: [
+          {
+            nombre: "Por similitud con alguna formula",
+            segundoVideo: 60,
+            mostrarSubtemas: true,
+            subTemas: null
+          },
+          {
+            nombre: "Pasando a senos y/o cosenos",
+            segundoVideo: 70,
+            mostrarSubtemas: true,
+            subTemas: null
+          },
+          {
+            nombre: "Despejando de las formulas",
+            segundoVideo: 80,
+            mostrarSubtemas: true,
+            subTemas: null
+          },
+          {
+            nombre: "Realizando las operaciones indicadas",
+            segundoVideo: 90,
+            mostrarSubtemas: true,
+            subTemas: null
+          },
+          {
+            nombre: "Binomios conjugados",
+            segundoVideo: 100,
+            mostrarSubtemas: true,
+            subTemas: null
+          }
+        ]
+      }
+    ]
+    return temario;
   }
 
 }

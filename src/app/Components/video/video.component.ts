@@ -75,6 +75,12 @@ export class VideoComponent implements OnInit {
         .subscribe(
           result => {
             videoStyleProps =  result;
+            $(".vjs-big-play-button").click(function() {
+              var queryContendorCapitulos =  $(".vjs-chapter-thumbnails-button");
+              if(queryContendorCapitulos.length>0){
+               console.log(queryContendorCapitulos.offset().left);
+              }
+            });
             $("div.vjs-control-bar").css("background-color",videoStyleProps.controlBarColor);
             $("ul.vjs-menu-content").css("background-color",videoStyleProps.controlBarColor);
             $(".vjs-control").css("color",videoStyleProps.controlBarElementColor);
@@ -84,7 +90,21 @@ export class VideoComponent implements OnInit {
               "width": videoStyleProps.width,
               "border": videoStyleProps.border
             });
-            $("video.vjs-tech").css("padding",videoStyleProps.padding);      
+            $("video.vjs-tech").css("padding",videoStyleProps.padding);
+            var queryContendorCapitulos =  $(".vjs-chapter-thumbnails-button");
+            if(queryContendorCapitulos.length>0){
+              $(".vjs-chapter-thumbnails-button").on('change', function(event) {
+                  console.log($(".vjs-chapter-thumbnails-button"))
+              });
+              var element = queryContendorCapitulos[0];
+              var width = queryContendorCapitulos.width();
+              var left = queryContendorCapitulos.offset().left;
+              var query1 = $(".vjs-chapter-thumbnails-menu");
+              if(query1.length>0){
+                var dockerChapterThumbnails = query1[0];
+                query1.css("right",(width+left+2)-$("#my-player").width());
+              }
+            }
           },
           error=>{
             console.log(error);

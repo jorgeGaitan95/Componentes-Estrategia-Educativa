@@ -33,6 +33,7 @@ export class RepositorioComponent implements OnInit {
         .subscribe(
           result => {
             repositorioStyleProps =  result;
+            $('#repositorio').css({'background-color':repositorioStyleProps.colorFondo});
             $('#repositorio').css("width",repositorioStyleProps.width);
             $('#repositorio').css("height",repositorioStyleProps.height);
             $('#repositorio').css("border",repositorioStyleProps.border);

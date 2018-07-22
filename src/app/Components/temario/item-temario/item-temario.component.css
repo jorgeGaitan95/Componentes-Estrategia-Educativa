@@ -1,0 +1,33 @@
+ul {
+    list-style-type: none;
+    margin: 3px;
+}
+.item-single:before {
+    content: '';
+    height: 7px;
+    width: 7px;
+    background: #d6d6d6;
+    display: inline-block;
+    border: 1px solid #b1b1b1;
+    margin-right: 4px;
+    left: -5px;
+    position: relative;
+    border-radius: 50%;
+    top: 1px;
+    /*height: 1em;
+    width: 12px;
+    border-bottom: 1px dashed;
+    content: "";
+    display: inline-block;
+    top: -0.3em;*/
+}
+.item-single {border-left: 1px solid #b1b1b1; }
+
+ul.checktree label{
+    line-height:22px;
+}
+.item-title { 
+    font-weight: bold;
+}
+/*ul.checktree li:last-child:before { border-left: 1px dashed; }
+ul.checktree li:last-child { border-left: none; }*/

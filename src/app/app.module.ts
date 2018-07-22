@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import { AppComponent } from './app.component';
 import { VideoComponent } from './Components/video/video.component';
@@ -19,6 +22,11 @@ import { FromNowPipe } from './pipes/from-now.pipe';
 import { NuevoComentarioComponent } from './Components/comentarios/nuevo-comentario/nuevo-comentario.component';
 import { DetalleComentarioComponent } from './Components/comentarios/detalle-comentario/detalle-comentario.component';
 import { TemarioComponent } from './Components/temario/temario.component';
+import { OverwiewVideoComponent } from './Components/video/overwiew-video/overwiew-video.component';
+import { MatTabsModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ItemTemarioComponent } from './Components/temario/item-temario/item-temario.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +41,19 @@ import { TemarioComponent } from './Components/temario/temario.component';
     FromNowPipe,
     NuevoComentarioComponent,
     DetalleComentarioComponent,
-    TemarioComponent
+    TemarioComponent,
+    OverwiewVideoComponent,
+    ItemTemarioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     PdfViewerModule,
-    HttpModule
+    HttpModule,
+    MatTabsModule,
+    MatCardModule,
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [
     StyleLocatorService,

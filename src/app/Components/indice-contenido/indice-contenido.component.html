@@ -1,8 +1,11 @@
 <div class="indice-container">
   <div [ngStyle]="{'width.px': listaTemas.length * itemWidth }" style="overflow: hidden">
       <div *ngFor="let tema of listaTemas" class="tema-container" (click)="navegarTema(tema)" >
-          <span class="indice-titulo indice-texto"> {{tema.titulo}}: </span>
-          <span class="indice-texto"> {{tema.nombre}} </span>
-        </div>
+          <img src="{{tema.imagen}}" alt="" style="float: left;width: 50px;padding-top: 5px;border: 1px solid #bbb6b6">
+          <div style="float: left; padding-left: 10px;">
+            <span class="indice-titulo indice-texto"> {{tema.titulo}}: </span>
+            <span class="indice-texto"> {{tema.nombre}} </span>
+          </div>
+      </div>
   </div>
 </div>

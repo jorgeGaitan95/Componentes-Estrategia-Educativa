@@ -2,7 +2,7 @@ ul {
     list-style-type: none;
     margin: 3px;
 }
-ul.checktree li:before {
+ul.checktree app-item-temario:before {
     height: 1em;
     width: 12px;
     border-bottom: 1px dashed;
@@ -10,7 +10,7 @@ ul.checktree li:before {
     display: inline-block;
     top: -0.3em;
 }
-ul.checktree li { border-left: 1px dashed; }
-ul.checktree li:last-child:before { border-left: 1px dashed; }
-ul.checktree li:last-child { border-left: none; }
+ul.checktree app-item-temario { border-left: 1px dashed; }
+ul.checktree app-item-temario:last-child:before { border-left: 1px dashed; }
+ul.checktree app-item-temario:last-child { border-left: none; }
     

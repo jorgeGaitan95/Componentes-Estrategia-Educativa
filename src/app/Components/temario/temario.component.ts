@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemTemario } from '../../Model/Temario/ItemTemario';
+import { ActivityDataService } from '../../services/activity-data.service';
 
 @Component({
   selector: 'app-temario',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemarioComponent implements OnInit {
 
-  constructor() { }
+  ItemsTemario: ItemTemario[];
+
+  constructor(private activityDataService: ActivityDataService) { }
 
   ngOnInit() {
+    this.ItemsTemario = this.activityDataService.obtenerItemsTemario("1");
+    console.log(this.ItemsTemario);
+    
   }
 
 }

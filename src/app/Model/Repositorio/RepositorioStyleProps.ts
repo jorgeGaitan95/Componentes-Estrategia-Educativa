@@ -4,4 +4,5 @@ export class RepositorioStyleProps{
     height: string;
     padding: string;
     colorLetra: string;
+    colorFondo: string;
 }

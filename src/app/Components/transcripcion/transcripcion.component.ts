@@ -25,6 +25,9 @@ export class TranscripcionComponent implements OnInit {
    * Metodo brindado por angular, que se ejecuta depues de cargar el componente
    */
   ngOnInit() {
+  }
+
+  ngAfterViewInit(){
     this.asignarPropiedadesDeEstiloAlComponente();
     this.inicializarComponenteTranscripcion();
   }

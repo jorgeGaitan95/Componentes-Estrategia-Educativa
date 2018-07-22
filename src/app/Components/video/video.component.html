@@ -1,3 +1,4 @@
+<h5 style="margin: 0 0 10px; color: #4ccfad; font-family: 'Montserrat',sans-serif;font-size: 15px;">TITULO DEL VIDEO</h5>
 <video
     id="my-player"
     class="video-js"
@@ -19,5 +20,14 @@
       </a>
     </p>
 </video>
-<app-transcripcion idVideo="my-player" variabilidad="{{variabilidad}}"></app-transcripcion>
+<mat-tab-group class="demo-tab-group" style="width: 100%; box-sizing: border-box; margin-top: 20px; background: #fff;" marg>
+  <mat-tab label="Transcripcion">
+    <div class="demo-tab-content">
+      <app-transcripcion idVideo="my-player" variabilidad="Variabilidad1"></app-transcripcion>
+    </div>
+  </mat-tab>
+  <mat-tab label="Indice Temas"  >
+    <app-temario></app-temario>
+  </mat-tab>
+</mat-tab-group>
 

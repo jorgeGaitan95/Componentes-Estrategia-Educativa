@@ -60,29 +60,34 @@ body{
 }
 
 #transcript {
-  width: 400px;
-  margin-top: 10px;
+  width: 100%;
   font-family: Arial, sans-serif;
-  border: 1px solid rgba(15, 39, 158, 0.82);
+  padding: 5px 13px 15px;
+  box-sizing: border-box;
+ /* margin-top: 10px;
+  border: 1px solid rgba(15, 39, 158, 0.82);*/
 }
 
 #query{
   margin-left: 3px;
-  background: #e4e4e4;
+  background: #fff;
   padding:6px 10px;
   border-radius:5px 0 0 5px;
   -moz-border-radius:5px 0 0 5px;
   -webkit-border-radius:5px 0 0 5px;
   -o-border-radius:5px 0 0 5px;
-  border:0 none;
+  border: 1px solid #e7e7e7;
   font-size: 14px;
-  width:156px;
+  width:171px;
+  -webkit-box-shadow: 0px 1px 1px #cecec7;
+  -moz-box-shadow: 0px 1px 1px #cecec7;
+   box-shadow: 0px 1px 1px #cecec7;
 }
 .queryButton{
-  background:rgba(15, 39, 158, 0.819608);
+  background:#47bb9d;
   color:white;
   font: 'trebuchet ms', trebuchet;
-  padding: 5px 20px;
+  padding: 7px 20px;
   border-radius:0 5px 5px 0;
   -moz-border-radius:0 5px 5px 0;
   -webkit-border-radius:0 5px 5px 0;
@@ -103,8 +108,9 @@ body{
 }
 .transcript-body {
   height: 200px;
-  border-top: 1px solid #e0e0e0;
+  border: 1px solid #e7e7e7;
   overflow-y: scroll;
+  padding: 8px;
 }
 
 .transcript-line {
@@ -118,11 +124,12 @@ body{
   position: absolute;
   display: inline-block;
   width: 50px;
+  padding-left: 3px;
 }
 
 .transcript-text {
   display: block;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .transcript-line:hover {
@@ -133,8 +140,8 @@ body{
   background-color: #e2fbfb;
 }
 .transcript-selector{
-  display: inline-block;
   margin-bottom: 12px;
+  margin-left: 5px;
   -webkit-appearance: button;
   -webkit-border-radius: 2px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
@@ -150,8 +157,79 @@ body{
   color: #555;
   font-size: 14px;
   overflow: hidden;
-  padding: 4px 10px;
+  padding: 5px 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 121px;
+  width: 150px;
+}
+
+.transcript-containerIdioma{
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.transcript-titleQuery{
+  font-size: 14px;
+  padding-left: 5px;
+  display: block;
+  line-height: 18px;
+}
+
+.video-js .vjs-progress-control {
+    position:absolute;
+    width: 100%;
+    top:-.3em;
+    height:3px;
+    /* deal with resulting gap between progress control and control bar that
+       is the result of the attempt to keep things "clickable" on the controls */
+    background-color: #2B333F;
+    background-color: rgba(43, 51, 63, 0.7);
+}
+
+.video-js .vjs-progress-holder {
+    position:absolute;
+    margin:0px;
+    top:0%;
+    width:100%;
+}
+
+.video-js .vjs-time-control {
+  display: block;
+}
+.video-js .vjs-remaining-time {
+  display: none;
+}
+
+.video-js .vjs-time-control {
+  padding-left: 1px;
+  padding-right: 1px;
+  min-width: 0px;
+}
+
+.video-js .vjs-duration, .vjs-no-flex .vjs-duration {
+  flex: auto;
+  text-align: left;
+}
+
+.vjs-menu .vjs-chapter-thumbnails-menu-item {
+  display: inline-block;
+  width: 200px;
+}
+
+/*
+.video-js .vjs-big-play-button {
+  left: 40% !important;
+  top: 40% !important;
+  width: 20%;
+  height: 20%;
+}
+
+.video-js .vjs-play-control:before {
+  top:20% !important;
+  content: '\f101';
+  font-size: 48px;
+}*/
+
+.mat-tab-group.mat-primary .mat-ink-bar{
+  background-color: #4ccfad !important;
 }
