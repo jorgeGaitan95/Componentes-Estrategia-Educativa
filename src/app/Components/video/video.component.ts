@@ -26,6 +26,13 @@ export class VideoComponent implements OnInit {
   InfoSincronizacion: ItemSincronizacion[];
   currentTemaSincronizacion: ItemSincronizacion;
   currentSecond: number;
+  Format = {
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+      [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }], // dropdown with defaults from theme
+    ]
+  };
 
   constructor(private styleLocatorService: StyleLocatorService, private activityDataService: ActivityDataService,
     private sincronizacionService: SincronizacionService) 

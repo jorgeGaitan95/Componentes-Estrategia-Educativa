@@ -26,8 +26,13 @@
       <app-transcripcion idVideo="my-player" variabilidad="Variabilidad1"></app-transcripcion>
     </div>
   </mat-tab>
-  <mat-tab label="Indice Temas"  >
+  <mat-tab label="Vista de Esquema"  >
     <app-temario></app-temario>
+  </mat-tab>
+  <mat-tab label="Cuaderno de Apuntes">
+    <div style="height: 306px; box-sizing: border-box; padding: 15px;">
+      <quill-editor [modules]="Format" [style]="{height: '235px'}"></quill-editor>
+    </div>
   </mat-tab>
 </mat-tab-group>
 

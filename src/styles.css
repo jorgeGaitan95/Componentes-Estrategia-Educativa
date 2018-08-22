@@ -99,7 +99,7 @@ body{
 .transcript-searchBox{
   display: inline-block;
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 9px;
 }
 
 .highlight{
@@ -178,7 +178,7 @@ body{
 .video-js .vjs-progress-control {
     position:absolute;
     width: 100%;
-    top:-.3em;
+    top:.1em;
     height:3px;
     /* deal with resulting gap between progress control and control bar that
        is the result of the attempt to keep things "clickable" on the controls */
@@ -211,10 +211,10 @@ body{
   text-align: left;
 }
 
-.vjs-menu .vjs-chapter-thumbnails-menu-item {
+/*.vjs-menu .vjs-chapter-thumbnails-menu-item {
   display: inline-block;
   width: 200px;
-}
+}*/
 
 /*
 .video-js .vjs-big-play-button {

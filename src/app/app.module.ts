@@ -6,7 +6,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
 import { AppComponent } from './app.component';
 import { VideoComponent } from './Components/video/video.component';
 import { PresentacionComponent } from './Components/presentacion/presentacion.component';
@@ -25,6 +24,7 @@ import { TemarioComponent } from './Components/temario/temario.component';
 import { OverwiewVideoComponent } from './Components/video/overwiew-video/overwiew-video.component';
 import { MatTabsModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
+import { QuillModule } from 'ngx-quill';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ItemTemarioComponent } from './Components/temario/item-temario/item-temario.component';
 
@@ -53,7 +53,8 @@ import { ItemTemarioComponent } from './Components/temario/item-temario/item-tem
     MatTabsModule,
     MatCardModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    QuillModule
   ],
   providers: [
     StyleLocatorService,
