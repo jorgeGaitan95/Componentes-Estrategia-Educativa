@@ -87,8 +87,8 @@ export class ActivityDataService {
    */
   obtenerSourcePresentacion(idComponente: string): PresentacionSource {
      var presentacionSource =  new PresentacionSource;
-     presentacionSource.src = "../../assets/identidades.pdf";
-     presentacionSource.nombre = "Identidades Trigonometricas";
+     presentacionSource.src = "../../assets/Guía Práctica Conceptos básicos de Bases de Datos.pdf";
+     presentacionSource.nombre = "Guía Práctica Conceptos básicos de Bases de Datos";
      return presentacionSource;
   }
 
@@ -284,31 +284,73 @@ export class ActivityDataService {
   obtenerMensajeChat(idComponente: string):  MensajeChat[]{
     var mensajes = [
       {
+        userId: 2,
+        userImg: "../../assets/ARG.png",
+        userName: "Alexandra Ruiz",
+        mensaje: "Para cuando queda la proxima entrega?"
+      },
+      {
         userId: 1,
-        userImg: "https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?resize=256%2C256&quality=100",
-        userName: "Jorge Gaitán",
-        mensaje: "Hello world"
+        userImg: "../../assets/WJG.png",
+        userName: "William Jospeh",
+        mensaje: "Queda para el próximo martes 18 de agosto. Puedes consultar en l información de la actividad"
       },
       {
         userId: 2,
-        userImg: "https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?resize=256%2C256&quality=100",
-        userName: "Jose Fernando",
-        mensaje: "Hello everyone"
-      },
-      {
-        userId: 3,
-        userImg: "http://www.epsomps.vic.edu.au/wp-content/uploads/2016/09/512x512-1-300x300.png",
-        userName: "Juliana Rengifo",
-        mensaje: "Hi!!"
+        userImg: "../../assets/ARG.png",
+        userName: "Alexandra Ruiz",
+        mensaje: "Gracias por la información"
       },
       {
         userId: 1,
-        userImg: "https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?resize=256%2C256&quality=100",
-        userName: "Jorge Gaitán",
-        mensaje: "This is a test!"
+        userImg: "../../assets/WJG.png",
+        userName: "William Jospeh",
+        mensaje: "Ok, Felicidades"
+      },
+      {
+        userId: 1,
+        userImg: "../../assets/WJG.png",
+        userName: "William Jospeh",
+        mensaje: "Hasta la proxima clase"
       }
     ]
     return mensajes;
+  }
+
+  obtenerContactosChat(): any {
+    var usuarios = [
+      {
+        userId: 1,
+        userImg: "../../assets/WJG.png",
+        nombre: "William Joseph Giraldo Orozco",
+        correo: "wjgiraldo@uniquindio.edu.co"
+      },
+      {
+        userId: 2,
+        userImg: "../../assets/WYCM.png",
+        nombre: "Wilmar Yesid Campo Muñoz",
+        correo: "wyocampo@uniquindio.edu.co"
+      },
+      {
+        userId: 3,
+        userImg: "../../assets/NDLS.png",
+        nombre: "Notificaciones de la secretaria...",
+        correo: "notificacionessecretariageneral@uni"
+      },
+      {
+        userId: 4,
+        userImg: "../../assets/FDGV.png",
+        nombre: "Faber Danilo Giraldo Velasquez",
+        correo: "fdgiraldo@uniquindio.edu.co"
+      },
+      {
+        userId: 5,
+        userImg: "../../assets/DTUQ.png",
+        nombre: "Division Tesoreria UQ",
+        correo: "tesoreuq@uniquindio.edu.co"
+      }
+    ]
+    return usuarios;
   }
 
   obtenerItemsTemario(idComponente: string): ItemTemario[]{

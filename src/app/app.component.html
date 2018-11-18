@@ -1,4 +1,5 @@
 <div>
+    <!--Info Usuario-->
     <section style="letter-spacing: 0; min-height: 56px; background: #363842">
         <div style="width: 90%; padding-left: 5%; padding-right: 5%; height: 56px;">
           <div style="float: right; padding-right: 10px;line-height: 54px;">
@@ -11,6 +12,7 @@
           </div>
         </div>
     </section>
+    <!--Header-->
     <header style="background: #fff; box-shadow: 0 1px 7px rgba(0,0,0,0.181); border-top: 2px solid #4ccfad;">
       <div style="padding-left: 30px; padding-right: 30px; height: 90px;">
         <div style="width: 240px;height: 80px;float: left;padding-top: 10px">
@@ -23,6 +25,7 @@
     </header>
     <section style="width: 100%">
         <hr style="height: 40px; margin: 0; border: none;">
+        <!--Miga de pan-->
         <div style="font-family: 'Montserrat',sans-serif; background: none; padding: 7px 0; font-size: 13px; color: #6c7279; text-transform: none; font-weight: 300; margin: 0 24px 20px; border-bottom: 1px solid #eee;">
           <div>
             <a href="http://webnus.biz/themes/michigan/online-learning/" style="text-decoration: none;color: #6c7279;">Inicio</a> 
@@ -34,8 +37,33 @@
         </div>
 
         <div style="width:94%;padding-left: 3%;padding-right: 3%;">
+          <h1 class="course-titles">Título de la Actividad</h1>
+        </div>
+        <app-actividad></app-actividad>
+
+        <div style="margin-top: 20px; height: 78px; font-family: 'Montserrat',sans-serif;">
+            <div style="display: inline-block;vertical-align: top;margin-left: 1%; width: 49%;background-color: #f5f5f5">
+              <div style="display: inline-block;vertical-align: top;font-size: 59px;margin-right: 10px;">
+                  <fa-icon [icon]="faAngleLeft" style="color:  #4ccfad;"></fa-icon>
+              </div>
+              <div style="display: inline-block;vertical-align: top;width: 204px;">
+                <span style="display: block;color:  #4ccfad;padding-top: 10px;font-size: 14px;">Actividad Anterior</span>
+                <span style="font-size: 15px">Aqui el Nombre de la Actividad Anterior</span>
+              </div>
+            </div>
+            <div style="display: inline-block;vertical-align: top;margin-right: 1%; width: 48%; text-align: right;background-color: #f5f5f5">
+                <div style="display: inline-block;vertical-align: top;width: 204px;">
+                  <span style="display: block;color:  #4ccfad;padding-top: 10px;font-size: 14px;">Proxima Actidad</span>
+                  <span style="font-size: 15px">Aqui el Nombre de la Actividad Anterior</span>
+                </div>
+                <div style="display: inline-block;vertical-align: top;font-size: 59px;margin-left: 10px;">
+                    <fa-icon [icon]="faAngleRight" style="color:  #4ccfad;"></fa-icon>
+                  </div>
+            </div>
+          </div>
+        <!-- Visata Anterior
+        
           <div style="width: 80%; float: left;">
-              <h1 class="course-titles">Título de la Actividad</h1>
               <p style="font-family: 'Montserrat',sans-serif; color: #5f5e5e; text-align: justify; font-size: 15px;line-height: 22px;">
                 Aqui va el texto que describe la actividad. En el texto se debe indicar el proposito de la actividad, la forma en como se debe realizar y lo que se espera una vez se haya terminado. Trate de ser presiso e incentive al estudiante en relacion con la importancia de realizarla para el proceso de aprendizaje y su aplicacion. 
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt numquam, delectus asperiores labore aliquid blanditiis, nemo dignissimos quos soluta aperiam a atque repellat harum itaque sit cumque quae! A, dicta!.
@@ -55,7 +83,6 @@
             </p>
           </div>
         </div>
-
         <div class="container">
           <div style="display: block;">
             <div style="display: inline-block; vertical-align: top; padding: 15px; background: #f7f7f7; border: 1px solid #e9e9e9; width: 48%;">
@@ -91,9 +118,9 @@
                   </div>
             </div>
           </div>
-          <!--<div style="display: block;">
+          <div style="display: block;">
               <app-indice-contenido variabilidad="Variabilidad1" style="display: block;margin-bottom: 20px;margin-top: 16px;"></app-indice-contenido>
-          </div>-->
+          </div>
           <div style="display: block;margin-top: 20px;">
             <app-chat style="display: block; float: left; margin-right: 30px;" ></app-chat>
             
@@ -101,6 +128,7 @@
           <div style="display: inline-block; margin-bottom: 20px; margin-top: 20px;">
             <app-comentarios ></app-comentarios>
           </div>
-        </div>
+        </div>-->
+
     </section>
 </div>

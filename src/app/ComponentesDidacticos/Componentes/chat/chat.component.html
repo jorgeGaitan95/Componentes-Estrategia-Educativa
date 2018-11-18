@@ -1,0 +1,47 @@
+<div class="container-componente-chat">
+    <div class="Container-contactos">
+      <h2>
+        <fa-icon [icon]="faComments" style="color:#30a989;"></fa-icon>
+        Chat
+      </h2>
+
+      <h3>Docentes conectados</h3>
+      <div class="contacto" *ngFor="let contacto of contactos">
+        <img src='{{contacto.userImg}}' class="contacto-imagen" alt="">
+        <div class="info-contacto">
+          <span style="display: block;font-size: 11px;">{{contacto.nombre}}</span>
+          <span style="display: block;font-size: 10px;">{{contacto.correo}}</span>
+        </div>
+      </div>
+      <h3>Estudiantes conectados</h3>
+      <div class="contacto" *ngFor="let mensaje of mensajes">
+          <img src='{{mensaje.userImg}}' class="contacto-imagen" alt="">
+          <div class="info-contacto">
+            <span style="display: block;font-size: 11px;">William Jospeh Giraldo Orozco</span>
+            <span style="display: block;font-size: 10px;">wjgiraldo@uniquindio.edu.co</span>
+          </div>
+        </div>
+    </div>
+    <div class="container-chat">
+      <div class="container-mensajes">
+        <div>William Jospeh Giraldo</div>
+        <div>
+            <span class="line">
+                <h2><span>HOY</span></h2>
+            </span>​
+        </div>
+        <div class="chat-mensaje" *ngFor="let mensaje of mensajes" [ngClass]="mensaje.userId === userId ? 'chat-mensaje-enviado' : 'chat-mensaje'">
+          <img src='{{mensaje.userImg}}' class="user-mensaje-imagen" alt="">
+          <div class="contenido-mensaje">
+            <div class="texto-mensaje">{{mensaje.mensaje}}</div>
+          </div>
+          <div class="white-space"></div>
+        </div>
+      </div>
+      <div class="container-nuevo-mensaje">
+        <input type="text" [(ngModel)]="textoNuevoMensaje" placeholder="Enviar un mensaje a William Jospeh..." class="input-nuevo-mensaje">
+        <button class="button-nuevo-mensaje" (click)="agregarMensaje()">enviar</button>
+      </div>
+    </div>
+</div>
+

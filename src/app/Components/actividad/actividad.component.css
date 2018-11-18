@@ -1,0 +1,46 @@
+.container-activity{
+    margin: 0 24px 20px;
+}
+.ui-tabs{
+    padding-top: 16px !important;
+    list-style: inside;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ui-tabs:before {
+    content: " ";
+    display: table;
+}
+
+.ui-tabs .ui-tabs-active{
+    border-bottom-color: #fff;
+    background: #fff;
+    padding-top: 17px;
+    margin-top: -6px;
+    cursor: default;
+}
+
+.ui-tabs li{
+    float: left;
+    display: block;
+    margin: 0 1px 0 0;
+    background: #f7f7f7;
+    display: block;
+    margin-bottom: -1px !important;
+    margin-right: -1px !important;
+    line-height: 18px;
+    border: 1px solid #e5e5e5;
+    white-space: nowrap;
+    background-image: none;
+    list-style: none !important;
+    padding: 12px 18px;
+    color: #555;
+    vertical-align: baseline;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat',sans-serif;
+}

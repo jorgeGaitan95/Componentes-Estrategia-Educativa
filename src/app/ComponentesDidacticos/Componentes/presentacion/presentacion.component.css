@@ -21,7 +21,7 @@
     height: 33px;
     width: 100%;
     box-shadow: 0px -1px 3px rgba(50, 50, 50, 0.75);
-    background-image: url(/assets/texture.png), -webkit-linear-gradient(rgba(82, 82, 82, .99), rgba(69, 69, 69, .95));
+    background-image: url(/assets/texture.png), -webkit-linear-gradient(rgba(88, 92, 107, 0.99), rgba(88, 92, 107, 0.99));
   }
   #toolbarLeft{
     float:left;
@@ -122,7 +122,7 @@
   .toolbarField.pageNumber {
       min-width: 16px;
       text-align: right;
-      width: 20px;
+      width: 30px;
   }
   
   .toolbarField {

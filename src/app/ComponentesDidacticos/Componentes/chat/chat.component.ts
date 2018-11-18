@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { MensajeChat } from '../../Model/Chat/mensaje-chat';
+import { User } from '../../Model/Chat/user';
 import { ActivityDataService } from '../../services/activity-data.service';
+import { faComments } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-chat',
@@ -8,21 +10,26 @@ import { ActivityDataService } from '../../services/activity-data.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+  
   mensajes: MensajeChat[];
+  contactos: User[];
   userId:number;
   textoNuevoMensaje: string;
+  faComments = faComments;
+
   constructor(private activityDataService: ActivityDataService) { }
 
   ngOnInit() {
     this.userId = 2;
     this.mensajes = this.activityDataService.obtenerMensajeChat("1");
+    this.contactos = this.activityDataService.obtenerContactosChat();
     var chatBox = document.querySelector('.container-mensajes');
     chatBox.scrollTop = chatBox.scrollHeight;
   }
 
   agregarMensaje(): void{
     var newMensaje= new MensajeChat();
-    newMensaje.userImg = "https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?resize=256%2C256&quality=100";
+    newMensaje.userImg = "../../../assets/ARG.png";
     newMensaje.userId = 2;
     newMensaje.userName = "Jose Fernando";
     newMensaje.mensaje = this.textoNuevoMensaje;

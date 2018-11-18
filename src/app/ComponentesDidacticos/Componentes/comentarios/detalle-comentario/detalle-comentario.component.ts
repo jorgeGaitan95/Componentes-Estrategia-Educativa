@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FromNowPipe } from '../../../pipes/from-now.pipe';
+import { FromNowPipe } from '../../../../pipes/from-now.pipe';
 import { Comentario } from '../../../Model/Comentarios/comentario';
 @Component({
   selector: 'app-detalle-comentario',

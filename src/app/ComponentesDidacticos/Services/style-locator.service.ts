@@ -60,7 +60,7 @@ export class StyleLocatorService {
    * @param variabilidad nombre de la variabilidad
    */
   obtenerPropiedadesIndiceContenido(variabilidad: string): Observable<IndiceStyleProps> {
-    return this.http.get('../../assets/metadata/'+variabilidad+'.json')
+    return this.http.get('../../../assets'+variabilidad+'.json')
     .map(response => response.json().indiceContenido);
   }
 

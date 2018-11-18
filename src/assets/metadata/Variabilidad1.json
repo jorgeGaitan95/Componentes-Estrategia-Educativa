@@ -28,9 +28,9 @@
   },
   "presentacion":{
     "width": "100%",
-    "height": "460px",
+    "height": "600px",
     "border": "1px solid #e7e7e7",
-    "frameColor": " rgb(45, 45, 45)",
+    "frameColor": " rgba(88, 92, 107, 0.99)",
     "colorLetra": "#fff",
     "padding":"20px"
   },
