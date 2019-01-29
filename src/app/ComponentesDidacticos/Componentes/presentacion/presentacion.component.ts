@@ -8,7 +8,7 @@ import { PresentacionSource } from '../../Model/Presentacion/PresentacionSource'
 import { PresentacionStyleProps } from '../../Model/Presentacion/presentacionStyleProps';
 import { PresentacionOptions } from '../../Model/Presentacion/PresentacionOptions';
 import { ItemSincronizacion } from '../../Model/ItemSincronizacion';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 import { faSearchMinus } from '@fortawesome/free-solid-svg-icons';
 import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';

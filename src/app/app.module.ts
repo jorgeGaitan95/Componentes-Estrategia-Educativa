@@ -12,6 +12,9 @@ import { ComponentsDynamicExport } from './services/components-dynamic-export';
 import { ActividadComponent } from './Components/actividad/actividad.component';
 import { ComponentesDidacticosModule } from './ComponentesDidacticos/componentes-didacticos.module';
 import { TemplateLocatorService } from './services/template-locator.service';
+import { EstrategiaDataService } from './services/estrategia-data.service';
+import { environment} from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,8 @@ import { TemplateLocatorService } from './services/template-locator.service';
   ],
   providers: [
     ComponentsDynamicExport,
-    TemplateLocatorService
+    TemplateLocatorService,
+    EstrategiaDataService
   ],
   bootstrap: [AppComponent]
 })

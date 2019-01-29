@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { EstrategiaDataService } from './services/estrategia-data.service';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,13 @@ export class AppComponent {
   faAngleRight = faAngleRight;
   faCalendarAlt = faCalendarAlt;
   faAngleLeft = faAngleLeft;
+
+  constructor(private estrategiaDataService: EstrategiaDataService) { }
+
+
+
+
+
+
+
 }

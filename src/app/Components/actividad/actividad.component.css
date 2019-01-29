@@ -44,3 +44,18 @@
     font-weight: bold;
     font-family: 'Montserrat',sans-serif;
 }
+.course-titles{
+    color: #000;
+    font-family: Montserrat, sans-serif;
+    font-size: 31px;
+    margin-top: 25px;
+  }
+  
+  .course-titles::after{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    position: absolute;
+    background: #4ccfad;
+  }

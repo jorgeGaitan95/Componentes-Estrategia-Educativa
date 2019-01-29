@@ -1,7 +1,9 @@
+
+import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http'
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+
 
 import { VideoStyleProps } from '../Model/Video/VideoStyleProps';
 import { TranscripcionStyleProps } from '../Model/Video/Transcripcion/TranscripcionStyleProps';
@@ -20,8 +22,8 @@ export class StyleLocatorService {
    * @param variabilidad nombre de la variabilidad
    */  
   obtenerPropiedadesEstiloVideo(variabilidad:string): Observable<VideoStyleProps> {
-    return this.http.get('../../assets/metadata/'+variabilidad+'.json')
-    .map(response => response.json().video);
+    return this.http.get('../../../assets/metadata/'+variabilidad+'.json').pipe(
+    map(response => response.json().video));
   }
   
   /**
@@ -30,8 +32,8 @@ export class StyleLocatorService {
    * @param variabilidad  nombre de la variabilidad
    */
   obtenerPropiedadesEstiloTranscripcion(variabilidad: string): Observable<TranscripcionStyleProps>{
-    return this.http.get('../../assets/metadata/'+variabilidad+'.json')
-    .map(response => response.json().video.transcipcion);
+    return this.http.get('../../../assets/metadata/'+variabilidad+'.json').pipe(
+    map(response => response.json().video.transcipcion));
   }
 
   /**
@@ -40,8 +42,8 @@ export class StyleLocatorService {
    * @param variabilidad nombre de la variabilidad
    */
   obtenerPropiedadesEstiloPDF(variabilidad: string): Observable<PresentacionStyleProps> {
-    return this.http.get('../../assets/metadata/'+variabilidad+'.json')
-    .map(response => response.json().presentacion);
+    return this.http.get('../../../assets/metadata/'+variabilidad+'.json').pipe(
+    map(response => response.json().presentacion));
   }
 
   /**
@@ -50,8 +52,8 @@ export class StyleLocatorService {
    * @param variabilidad nombre de la variabilidad
    */
   obtenerPropiedadesRepositorio(variabilidad: string): Observable<RepositorioStyleProps> {
-    return this.http.get('../../assets/metadata/'+variabilidad+'.json')
-    .map(response => response.json().repositorio);
+    return this.http.get('../../../assets/metadata/'+variabilidad+'.json').pipe(
+    map(response => response.json().repositorio));
   }
 
   /**
@@ -60,8 +62,8 @@ export class StyleLocatorService {
    * @param variabilidad nombre de la variabilidad
    */
   obtenerPropiedadesIndiceContenido(variabilidad: string): Observable<IndiceStyleProps> {
-    return this.http.get('../../../assets'+variabilidad+'.json')
-    .map(response => response.json().indiceContenido);
+    return this.http.get('../../../assets'+variabilidad+'.json').pipe(
+    map(response => response.json().indiceContenido));
   }
 
 

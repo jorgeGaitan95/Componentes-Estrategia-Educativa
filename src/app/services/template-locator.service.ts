@@ -1,7 +1,9 @@
+
+import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http'
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+
 import { IndiceStyleProps } from '../ComponentesDidacticos/Model/Indice/IndiceStyleProps';
 
 
@@ -17,7 +19,7 @@ export class TemplateLocatorService {
    */
   obtenerPropiedadesIndiceContenido(variabilidad: string): Observable<string> {
     var html1 = "1";
-    return this.http.get('../../assets/Templates/'+variabilidad+'.html')
-    .map(response => response.text());
+    return this.http.get('../../assets/Templates/'+variabilidad+'.html').pipe(
+    map(response => response.text()));
   }
 }

@@ -9,7 +9,7 @@ import { VideoStyleProps } from '../../Model/Video/VideoStyleProps';
 import { VideoSource } from '../../Model/Video/VideoSource';
 import { VideoSubtitulosSource } from '../../Model/Video/VideoSubtitulosSource';
 import { ItemSincronizacion } from '../../Model/ItemSincronizacion';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-video',

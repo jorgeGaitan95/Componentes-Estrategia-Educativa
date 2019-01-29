@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { ComponentsDynamicExport } from '../../services/components-dynamic-export';
 import { TemplateLocatorService } from '../../services/template-locator.service';
 import { ActivatedRoute } from '@angular/router';
+import { EstrategiaDataService } from '../../services/estrategia-data.service';
+import { Actividad } from '../../Model/Actividad'
 @Component({
   selector: 'app-actividad',
   templateUrl: './actividad.component.html',
@@ -18,11 +20,13 @@ export class ActividadComponent implements OnInit {
   viewMode = 'tab1';
   textHMTL= "";
   showComponent = false;
+  Activiades: Actividad[];
+  Actividad : Actividad;
   
   public dynamicComponent: any;
   public dynamicModule: NgModuleFactory<any>;
 
-  constructor(private _compiler: Compiler, private dynamicComponentExport: ComponentsDynamicExport, private templateLocator : TemplateLocatorService, private activateRoute: ActivatedRoute) { }
+  constructor(private _compiler: Compiler, private dynamicComponentExport: ComponentsDynamicExport, private templateLocator : TemplateLocatorService, private activateRoute: ActivatedRoute, private estrategiaDataService: EstrategiaDataService) { }
 
   ngOnInit() {
     let html = ""
@@ -38,7 +42,10 @@ export class ActividadComponent implements OnInit {
       else
         template = "variabilidad4";
 
-      this.templateLocator.obtenerPropiedadesIndiceContenido(template)
+      if(id !== undefined){
+        this.Activiades = this.estrategiaDataService.ObtenerActividadesEstrategiaDidactica();
+        this.Actividad = this.Activiades[id];
+        this.templateLocator.obtenerPropiedadesIndiceContenido(this.Actividad.Interface)
         .subscribe(
           result => {
             console.log(result);
@@ -50,6 +57,7 @@ export class ActividadComponent implements OnInit {
             console.log(error);
           }
         );
+      }
     })
   }
 

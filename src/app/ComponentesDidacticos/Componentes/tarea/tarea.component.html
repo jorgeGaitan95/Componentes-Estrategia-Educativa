@@ -1,0 +1,44 @@
+<h1 style="margin-top: 0;color: #000; font-family: Montserrat, sans-serif;font-size: 31px;">
+  Acerca de Model Driven
+</h1>
+<p>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, aut dolore repellat a deleniti facere cum distinctio perspiciatis praesentium asperiores libero dolores vitae dolor fugit dignissimos temporibus neque dolorem enim?
+</p>
+<h1>
+  Estado de la entrega
+</h1>
+<div>
+  <p style="width: 30%; float: left;">Estado de la entrega</p>
+  <p style="width: 65%;float: left;">No entregada</p>
+</div>
+<div>
+  <p style="width: 30%; float: left;">Calificación</p>
+  <p style="width: 65%;float: left;">Sin calificacion<p>
+</div>
+<div>
+  <p style="width: 30%; float: left;">Comentarios</p>
+  <p style="width: 65%;float: left;">Sin calificacion<p>
+</div>
+
+<button class="button-center" (click)="MostarComponente()">Agregar Archivos</button>
+
+
+<div class="center" style="margin-top: 30px;" *ngIf="showComponent">
+  <file-drop headertext="" (onFileDrop)="dropped($event)" 
+  (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+      <span>You can drag and drop files here to add them</span>
+  </file-drop>
+  <div class="upload-table">
+    <ng-table [config]="config" (tableChanged)="onChangeTable(config)" [rows]="rows" [columns]="columns">
+    </ng-table>
+    <pagination *ngIf="config.paging" class="pagination-sm" [(ngModel)]="page" [totalItems]="length" [itemsPerPage]="itemsPerPage"
+      [maxSize]="maxSize" [boundaryLinks]="true" [rotate]="false" (pageChanged)="onChangeTable(config, $event)" (numPages)="numPages = $event">
+    </pagination>
+  </div> 
+
+  <button class="button-center" (click)="OcultarComponente()">Guardar</button>
+  <button class="button-center" (click)="OcultarComponente()">Cancelar</button>
+
+
+
+</div>

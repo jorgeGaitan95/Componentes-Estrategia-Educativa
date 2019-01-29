@@ -22,6 +22,11 @@ import { FromNowPipe } from '../pipes/from-now.pipe';
 import { OverwiewVideoComponent } from './Componentes/video/overwiew-video/overwiew-video.component';
 import { QuillModule } from 'ngx-quill';
 import { ItemTemarioComponent } from './Componentes/temario/item-temario/item-temario.component';
+import { TareaComponent } from './Componentes/tarea/tarea.component';
+import { FileDropModule } from 'ngx-file-drop';
+import { Ng2TableModule } from 'ng2-table/ng2-table';
+import { PaginationModule } from 'ngx-bootstrap';
+import { QuizComponent } from './Componentes/quiz/quiz.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -31,6 +36,9 @@ import { ItemTemarioComponent } from './Componentes/temario/item-temario/item-te
     MatTabsModule,
     MatTabsModule,
     FontAwesomeModule,
+    FileDropModule,
+    Ng2TableModule,
+    PaginationModule.forRoot()
   ],
   declarations: [
     VideoComponent,
@@ -45,7 +53,9 @@ import { ItemTemarioComponent } from './Componentes/temario/item-temario/item-te
     DetalleComentarioComponent,
     TemarioComponent,
     OverwiewVideoComponent,
-    ItemTemarioComponent
+    ItemTemarioComponent,
+    TareaComponent,
+    QuizComponent
   ],
   providers:[
     StyleLocatorService,
@@ -64,7 +74,9 @@ import { ItemTemarioComponent } from './Componentes/temario/item-temario/item-te
     DetalleComentarioComponent,
     TemarioComponent,
     OverwiewVideoComponent,
-    ItemTemarioComponent
+    ItemTemarioComponent,
+    TareaComponent,
+    QuizComponent
   ]
 })
 export class ComponentesDidacticosModule { }

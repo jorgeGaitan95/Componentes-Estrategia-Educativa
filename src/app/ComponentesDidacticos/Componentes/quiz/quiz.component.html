@@ -1,0 +1,154 @@
+<h1 style="color: #000; font-family: Montserrat, sans-serif;font-size: 31px;">
+  Quiz Introducción a las Bases de datos
+</h1>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eveniet eius distinctio veniam sit, culpa deleniti voluptate maiores facilis debitis doloribus odio. Nesciunt eum ducimus nihil fugit velit enim sunt.
+</p>
+
+<div [ngSwitch]="viewMode">
+  <div  *ngSwitchCase="'tab1'">
+    <div class="row" >
+      <div class="col-12">
+        <ng-table [config]="config" [rows]="rows" [columns]="columns">
+        </ng-table>            
+        <h4 style="text-align: center">Mejor puntaje: 7.50 / 10.00 </h4>
+        <button style="margin-left: 45%; margin-top: 20px;" (click)="RealizarPrueba()"> Realizar prueba</button>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="'tab2'">
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div  class="container-info-pregunta">
+          <label class="label-pregunta-num">Pregunta <span>1</span></label>
+          <h4 class="valoracion-pregunta">Valoracion 1.0</h4>
+        </div>
+      </div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <div class="container-pregunta">
+          <h5>¿Como se organiza y almacena una base de datos normalmente?</h5>
+          <div class="repuestas-container">
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion1" data-id="1">Con filas y tablas</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion2" data-id="2">Con cuadricula</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion3" data-id="3">En una tabla con filas y columnas</label>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div  class="container-info-pregunta">
+          <label class="label-pregunta-num">Pregunta <span>2</span></label>
+          <h4 class="valoracion-pregunta">Valoracion 1.0</h4>
+        </div>
+      </div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+          <div class="container-pregunta">
+            <h5>¿Que es un campo?</h5>
+            <div class="repuestas-container">
+              <div class="radio">
+                <label><input type="radio" class="opcion-respuesta" name="opcion1" data-id="1">Un dato construido por una serie de caracteres</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" class="opcion-respuesta" name="opcion2" data-id="2">Es una cuadricula para introducir datos</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" class="opcion-respuesta" name="opcion3" data-id="3">Es una tabla</label>
+              </div>
+            </div>
+          </div>
+      </div>  
+    </div>
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div  class="container-info-pregunta">
+          <label class="label-pregunta-num">Pregunta <span>3</span></label>
+          <h4 class="valoracion-pregunta">Valoracion 1.0</h4>
+        </div>
+      </div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <div class="container-pregunta">
+          <h5>¿Que desventaja tiene una longitud fija en el tamaño del campo?</h5>
+          <div class="repuestas-container">
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion1" data-id="1">Ninguna desventaja</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion2" data-id="2">Dificulta la extracion de la informacion de dicho campo</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion3" data-id="3">Desperdicio de lugar</label>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div  class="container-info-pregunta">
+          <label class="label-pregunta-num">Pregunta <span>4</span></label>
+          <h4 class="valoracion-pregunta">Valoracion 1.0</h4>
+        </div>
+      </div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <div class="container-pregunta">
+          <h5>¿A la unidad elemental de informacion en un archivo se le denomina clave?</h5>
+          <div class="repuestas-container">
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion1" data-id="1">Verdadero</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion2" data-id="2">Falso</label>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div  class="container-info-pregunta">
+          <label class="label-pregunta-num">Pregunta <span>5</span></label>
+          <h4 class="valoracion-pregunta">Valoracion 1.0</h4>
+        </div>
+      </div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <div class="container-pregunta">
+          <h5>En cuanto a las caracteristicas de la informacion, esta debe ser:</h5>
+          <div class="repuestas-container">
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion1" data-id="1">Contextualizada, Correcta y disponible</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion2" data-id="2">Relevante, precisa y disponible</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion3" data-id="3">Relevante, correcta y disponible</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" class="opcion-respuesta" name="opcion4" data-id="4">Contextualizada, estructurada y disponible</label>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-1 col-xs-2">
+        <button class="button-center" style="float: right;" (click)="ObtenerResultados()">Enviar Respuestas</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div>
+  
+</div>
